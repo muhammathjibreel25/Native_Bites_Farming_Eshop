@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Native Bites - Product Details</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Public+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1dc91d",
+            "background-light": "#f6f8f6",
+            "background-dark": "#112111",
+            "foreground-light": "#111711",
+            "foreground-dark": "#f0f4f0",
+            "subtle-light": "#dce5dc",
+            "subtle-dark": "#2d3a2d",
+            "muted-light": "#648764",
+            "muted-dark": "#a4bda4",
+          },
+          fontFamily: {
+            "display": ["Public Sans"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-subtle-light dark:border-subtle-dark">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-3 text-foreground-light dark:text-foreground-dark" href="#">
+<svg class="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-xl font-bold">Native Bites</span>
+</a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Shop</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">About</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors">
+<span class="material-symbols-outlined text-muted-light dark:text-muted-dark">search</span>
+</button>
+<button class="p-2 rounded-full hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors relative">
+<span class="material-symbols-outlined text-muted-light dark:text-muted-dark">shopping_cart</span>
+<span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-primary ring-2 ring-background-light dark:ring-background-dark"></span>
+</button>
+<button class="md:hidden p-2 rounded-full hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors">
+<span class="material-symbols-outlined text-muted-light dark:text-muted-dark">menu</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="grid md:grid-cols-2 gap-12">
+<div class="aspect-[4/3] rounded-xl overflow-hidden">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyE33x1ilCDgmjMH6WSApymFjOdbeuDIc-T51VzL0Z2vFZHjhPi8mWD1If5i97LrDE6uzs37fDsFoE577uRbTdvV_I3mWzwysrY8cppUvG785vaE9TNXl_hWWoxz_jPQGdyEW9wNsPBIS37U0Ckr9YJ7SgcnRaaZpII2Oc599VWj_QeLAVnvJpfjOjX_8A2WpeyKKCV_OpVlhrGFmokJFgfio9O9Pt-o4LtZArVljG17yhgHUWYxpA_FVdgF6V7jpzgPqyymIXOUg");'></div>
+</div>
+<div class="flex flex-col">
+<div class="space-y-4">
+<nav class="text-sm font-medium text-muted-light dark:text-muted-dark">
+<a class="hover:text-primary" href="#">Shop</a>
+<span>/</span>
+<a class="hover:text-primary" href="#">Hens</a>
+</nav>
+<h1 class="text-4xl lg:text-5xl font-bold tracking-tight">Rhode Island Red Hen</h1>
+<div class="flex items-baseline gap-4">
+<p class="text-4xl font-bold text-primary">$25.00</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">inventory_2</span>
+<span class="text-lg font-medium text-primary">In Stock</span>
+</div>
+</div>
+<div class="prose prose-sm dark:prose-invert max-w-none text-muted-light dark:text-muted-dark">
+<p>This Rhode Island Red hen is known for its robust health and excellent egg-laying capabilities. It's a dual-purpose breed, suitable for both meat and egg production. Each hen weighs approximately 6-7 pounds and is expected to lay around 250-300 eggs per year. These hens are raised in a free-range environment, ensuring their well-being and the quality of their eggs.</p>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-subtle-light dark:border-subtle-dark space-y-6">
+<div class="grid sm:grid-cols-2 gap-6">
+<div>
+<label class="block text-base font-bold mb-2" for="quantity">Quantity</label>
+<div class="flex rounded-xl border border-subtle-light dark:border-subtle-dark overflow-hidden">
+<button class="px-4 py-3 hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors text-lg font-bold">-</button>
+<input class="w-20 text-center text-lg font-bold border-x border-subtle-light dark:border-subtle-dark bg-transparent focus:ring-0 focus:outline-none" id="quantity" min="1" type="number" value="1"/>
+<button class="px-4 py-3 hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors text-lg font-bold">+</button>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<button class="w-full h-14 bg-primary text-white rounded-xl text-base font-bold shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">shopping_cart</span>
+Add to Cart
+</button>
+<button class="w-full h-14 bg-primary/20 text-primary dark:bg-primary/30 dark:text-foreground-dark rounded-xl text-base font-bold shadow-sm hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors">Buy Now</button>
+</div>
+</div>
+<div class="flex items-start gap-3 p-4 rounded-lg bg-subtle-light/50 dark:bg-subtle-dark/50">
+<span class="material-symbols-outlined text-primary mt-1">local_shipping</span>
+<div>
+<p class="font-semibold">Delivery Information</p>
+<p class="text-sm text-muted-light dark:text-muted-dark">Estimated delivery within 3-5 business days. Shipping costs calculated at checkout.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-20">
+<h2 class="text-2xl font-bold mb-6">Related Products</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="group">
+<div class="aspect-square rounded-lg overflow-hidden mb-2">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmKWGHwurfebStl4zH2zq9KrdNTyMcpX2SSEzJRVmV0lhdLwl0dNlmVfSfoF5HbTT-Hw7uBajiGI0NeT8o-VwLN7d56aRAW9qmNNik2txbGf_iyv4AOGS4duE4qhCq7XkdOJUXOIMbqUMmE9GIzWrluDZ3vJaGgPYSvCp2PnDW6whx95tiaoh_B9j_kOX0zVJbeJzPv0MoWCND85mwCCitD-XC0nd7obIlN1F4EccL3ctpsNhuDcYOPXDlhUHYTTsno6OGjcbV0bg");'></div>
+</div>
+<h3 class="text-base font-medium">Native Bites Eggs</h3>
+<p class="text-sm text-muted-light dark:text-muted-dark">$5.00</p>
+</div>
+<div class="group">
+<div class="aspect-square rounded-lg overflow-hidden mb-2">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlTeP11f2ec2r14m2gyOSfbNhlxn713wsZMEmEyCfCyPK0x4j7cEzHKDTBJvFWKhx9SCZfJvBVn3Inbj_3vJjoqC-uMj4eSlpcI9KCsFUHlB4lSfz7v0eJzAa207gcFdAlVdKS0v6NNmeWzV35wpoAnMpKZCuMqvbn_GVUbW_w9S3EndbsUqIvnN-iAweZuJBV_TEL0marUx5N_A5GP_BdgOAwnZpUjOgEXxoEorLgMEHhdFYLs-5_7EI4OyAJDZ5BnSJG-PGRFnE");'></div>
+</div>
+<h3 class="text-base font-medium">Goat Milk</h3>
+<p class="text-sm text-muted-light dark:text-muted-dark">$8.00</p>
+</div>
+<div class="group">
+<div class="aspect-square rounded-lg overflow-hidden mb-2">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2_-ivGnxRnemEL3aMXq0jMJwSQN1H9YSZlbZo69yePp5Puj4W5J2x5wv_ngw53VWr4DLDOc-Sp0tz1J2u8FmCQCB8h-fJtVYvG8wUv1MwOR5esVLmeHhifsQvoKJFudFkSIxT9idrGOZc5sSEdpvN1zXo9JCrI6yvrScuCpTY0vBfeU6yIUGK0vUy61miFV3gqRf6xIVzD2rvtUaW_GEcpoI1aA2RRROEJaS9mJ10fn266M0G6UbimlGzZgtzXsPFJWt6kxPzTBU");'></div>
+</div>
+<h3 class="text-base font-medium">Organic Vegetables</h3>
+<p class="text-sm text-muted-light dark:text-muted-dark">$3.00</p>
+</div>
+<div class="group">
+<div class="aspect-square rounded-lg overflow-hidden mb-2 bg-subtle-light dark:bg-subtle-dark">
+<div class="w-full h-full bg-center bg-no-repeat bg-cover group-hover:scale-105 transition-transform duration-300" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB78_DqxaB7gjfFBmrR7Kzg99e5FBBoUPAqBGDZbBViGx0MSA3QaMFCVZWHRCUWtrSLPCWrseLAf1tkEgCBqFDKK7B09nMtcARiPHMDNdPtMOwK5jQdof-2kynnU0Rx1JXQi95EAXSF4h6ajqDd-my8Kk9D8pWcBMQwAZWL98fGBNsO55AohrwBu5o126-4n_CMGudy0wMjwAZ8bW8WFQlSH_5xrOq0ONhRPJQxlJi6uL_JFxN7bAGQVdaeN2k5EOnaqQA31onb_LE");'></div>
+</div>
+<h3 class="text-base font-medium">Boer Goat</h3>
+<p class="text-sm text-muted-light dark:text-muted-dark">$150.00</p>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-background-light dark:bg-background-dark border-t border-subtle-light dark:border-subtle-dark">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-muted-light dark:text-muted-dark">
+<p>© 2024 Native Bites. All rights reserved.</p>
+</div>
+</footer>
+</div>
+
+</body></html>

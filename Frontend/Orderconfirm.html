@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Native Bites - Order Confirmation</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1dc91d",
+            "background-light": "#f6f8f6",
+            "background-dark": "#112111",
+          },
+          fontFamily: {
+            "display": ["Public Sans"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+  <div class="flex flex-col min-h-screen">
+    <header class="bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-10">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center gap-4">
+            <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+            </svg>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white">Native Bites</h2>
+          </div>
+          <nav class="hidden md:flex items-center gap-8">
+            <a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="Shop.html">Shop</a>
+            <a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="About.html">Our Kutty Story</a>
+            <a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="#">Recipes</a>
+            <a class="text-sm font-medium hover:text-primary dark:hover:text-primary" href="Contact.html">Contact</a>
+          </nav>
+          <div class="flex items-center gap-2">
+            <button class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">
+              <span class="material-symbols-outlined">search</span>
+            </button>
+            <a href="Cart.html"><button class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">
+                <span class="material-symbols-outlined">shopping_cart</span>
+              </button></a>
+            <div class="ml-2">
+              <a href="Myaccount.html"><img alt="User profile" class="size-10 rounded-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCalFMQdf-5TIjlGUUUH1iEelwAGk6QuSuvZpsO8ghqxou_zWO-aNH4QWHKyTfdoSPYtzjZwVyYBUqkbaIt-kxthicCbIP5wlQXZAgn5HTPX9U-fHL1nkEgnA0wHCqz6Begie3big_F6Iqt_8VaV_kZeBd7ZITyRXjdbwYzwifQy6eLt3ho-O2RiF1XSUT1xfXXgIAQ8YDtTV9IQGcwoSxswK0GcpzRmAwTkwljvbSCpflLSSgf8sCmNSiuwphES_Bha7axiykcPaY" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="flex-grow">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <div class="max-w-3xl mx-auto">
+          <div class="mb-12">
+            <div class="relative">
+              <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-gray-300 dark:bg-gray-700"></div>
+              <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-primary"></div>
+              <div class="relative flex justify-between items-center">
+                <div class="flex flex-col items-center gap-2 z-10">
+                  <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined">check</span>
+                  </div>
+                  <span class="text-sm font-medium text-gray-900 dark:text-white">Shipping</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 z-10">
+                  <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined">check</span>
+                  </div>
+                  <span class="text-sm font-medium text-gray-900 dark:text-white">Payment</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 z-10">
+                  <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined">check</span>
+                  </div>
+                  <span class="text-sm font-medium text-gray-900 dark:text-white">Review</span>
+                </div>
+                <div class="flex flex-col items-center gap-2 z-10">
+                  <div
+                    class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white ring-4 ring-primary/30">
+                    <span class="material-symbols-outlined">check_circle</span>
+                  </div>
+                  <span class="text-sm font-bold text-primary">Confirmation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-background-light dark:bg-background-dark/50 p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800 text-center">
+            <span class="material-symbols-outlined text-primary text-6xl">check_circle</span>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white mt-4">Thank you for your order!
+            </h1>
+            <p class="mt-4 text-gray-600 dark:text-gray-400">Your order has been successfully placed. You will receive
+              an email confirmation shortly with your order details.</p>
+          </div>
+          <div
+            class="mt-12 bg-background-light dark:bg-background-dark/50 p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Order Summary</h2>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <p class="text-sm text-gray-600 dark:text-gray-400">Order Number</p>
+                <p class="text-sm font-medium text-gray-900 dark:text-white">#123456789</p>
+              </div>
+              <div class="flex justify-between items-center">
+                <p class="text-sm text-gray-600 dark:text-gray-400">Estimated Delivery</p>
+                <p class="text-sm font-medium text-gray-900 dark:text-white">June 15, 2024</p>
+              </div>
+              <div class="flex justify-between items-center">
+                <p class="text-sm text-gray-600 dark:text-gray-400">Payment Method</p>
+                <p class="text-sm font-medium text-gray-900 dark:text-white">Credit Card ending in 1234</p>
+              </div>
+              <div class="flex justify-between items-center">
+                <p class="text-sm text-gray-600 dark:text-gray-400">Shipping Address</p>
+                <p class="text-sm font-medium text-gray-900 dark:text-white">123 Farm Lane, Ruralville, USA</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mt-12 bg-background-light dark:bg-background-dark/50 p-8 rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Items Ordered</h2>
+            <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+              <li class="py-4 flex items-center">
+                <img alt="Organic Brown Eggs" class="size-16 rounded-lg object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6qqGPwJpGmLsBa1BUm-UccUM7kqq2Usbgnq8NmpRTEXVOWbcYPAKYpVyRqjwuFHeFgvzs9xlWoZk3DHt8zZvZ7wTZzXZhM_0_MFUoa2Pry1jFUCZ-7mOJ8RbStI0y2GgrI434dD2gGXT_gU5CL5rWd2Hf6H-Bnfi101FDsmyKecw2RTmI1py5FDd7N5ZNZ0-kTj1CuuykgxM6Qnt06IXkqbV7-N1nLeRny1sVQ9PbAk8-v5c9xA1k2Evw2Uz8mD0iz8NzCTHbk-0" />
+                <div class="ml-4 flex-1">
+                  <p class="font-medium text-gray-900 dark:text-white">Organic Brown Eggs</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Quantity: 2</p>
+                </div>
+                <p class="font-medium text-gray-900 dark:text-white">$8.00</p>
+              </li>
+              <li class="py-4 flex items-center">
+                <img alt="Free-Range Chicken" class="size-16 rounded-lg object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSWSIv-q2t3nuFMj7yKsTnmtjmaDq2nTgE_60q-IOFIIqQQ80LRv-SGUWkdiIUm1guJgqrZiAZ8_MUoRGDNpC_kLlQX8EYZdl6JPSipKhKKcIJOxGuphQRRZEDjtHJOFpTe8M8Xx_iO6lgmxpvlzz1MpLzhi1kY-8F7o-J2VnyxbIAZjfHek0scCbrO1x_ydX2R5ST2wHvcYml7V7UazBX2c16qDFLJRdbW3RkBeb3UqxwQuFjmzlUJeN1eNDIpWekjnLS4fmIQFg" />
+                <div class="ml-4 flex-1">
+                  <p class="font-medium text-gray-900 dark:text-white">Free-Range Chicken</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Quantity: 1</p>
+                </div>
+                <p class="font-medium text-gray-900 dark:text-white">$15.00</p>
+              </li>
+              <li class="py-4 flex items-center">
+                <img alt="Goat Milk Cheese" class="size-16 rounded-lg object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvVaD-zEcwRgQQqJw7hDUy2qLQTvrZnLY6JykCwId3fQP0DgPuhVJy0UDkqDwuJBS78NTRaXipc0Xab_NwnnxeIBw_pO9sQPqlqqiMUj_4r5D7ktIKmF3skjM50pI72nvC6NZ1I8REo87xy5tv3wgTAyQThIXr7mfNTc42I4UNjdhbIX1m7257g_u2bGU13Jwh66WqZJLslGa-S1PLz8V-Cru6FyI70Lg5d5Nu2Z7WsvdP5cW-IC3UM1snRXaEUmQACMBzr-6hsAo" />
+                <div class="ml-4 flex-1">
+                  <p class="font-medium text-gray-900 dark:text-white">Goat Milk Cheese</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Quantity: 1</p>
+                </div>
+                <p class="font-medium text-gray-900 dark:text-white">$12.50</p>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-16 flex flex-col sm:flex-row justify-center gap-4">
+            <a href="Ordertracking.html"><button
+                class="w-full sm:w-auto flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-primary/90">
+                Track Order
+              </button></a>
+            <a href="Shop.html"><button
+                class="w-full sm:w-auto flex items-center justify-center px-8 py-3 border border-gray-300 dark:border-gray-700 text-base font-medium rounded-lg text-gray-700 dark:text-gray-200 bg-background-light dark:bg-background-dark/50 hover:bg-gray-50 dark:hover:bg-gray-800">
+                Back to Homepage
+              </button></a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Native Bites - My Account</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1dc91d",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112111",
+                        "content-light": "#1f2923",
+                        "content-dark": "#e8f5e9",
+                        "subtle-light": "#e8f5e9",
+                        "subtle-dark": "#2e4034",
+                        "border-light": "#dce5dc",
+                        "border-dark": "#38523f",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-content-light dark:text-content-dark">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <header
+            class="flex items-center justify-between whitespace-nowrap border-b border-border-light dark:border-border-dark px-4 sm:px-6 lg:px-10 py-3">
+            <div class="flex items-center gap-6">
+                <a class="flex items-center gap-3 text-xl font-bold" href="#">
+                    <span class="material-symbols-outlined text-primary text-3xl">grass</span>
+                    <span>Native Bites</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="Shop.html">Shop</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="About.html">Our Kutty Story</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="Contact.html">Contact</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="hidden sm:flex items-center rounded-lg bg-subtle-light dark:bg-subtle-dark">
+                    <span
+                        class="material-symbols-outlined pl-3 text-content-light/70 dark:text-content-dark/70">search</span>
+                    <input
+                        class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-transparent focus:outline-none focus:ring-0 border-none h-10 placeholder:text-content-light/50 dark:placeholder:text-content-dark/50 px-2 text-sm font-normal"
+                        placeholder="Search products..." type="search" />
+                </div>
+                <a href="Myaccount.html"><button class="relative">
+                        <img alt="User avatar" class="size-10 rounded-full"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8QP8Vtn2b4V68JXZdj-MC4LfMViOBGoWLtGAW0r039qul85zTbLrLgBnuNK-jxpFGJWwi5prcaigk940JWSBDGRWg4hXdMZ2Xb8Pt6VUJc4SJGmnGYhEAu6aj8KYqBNlkzIIn46yFA8woXYOYc8ZtVS11SIwAEDMBUHozMrgtesdYPHU50WkUitsIK_j732VIrR0CGs763rg_DelFVUZX8GZKm5jUwG8avVoP0x1AgEZ4gc9CNYpKDp5b8ktQAhSxMLBMOVShyo8" />
+                    </button></a>
+            </div>
+        </header>
+        <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <aside class="md:col-span-1">
+                    <h1 class="text-3xl font-bold mb-6">My Account</h1>
+                    <nav class="flex flex-col space-y-1">
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors"
+                            href="Orderpage.html">
+                            <span class="material-symbols-outlined text-lg">receipt_long</span>
+                            <span class="text-sm font-medium">Orders</span>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30 text-primary font-bold"
+                            href="#">
+                            <span class="material-symbols-outlined text-lg">favorite</span>
+                            <span class="text-sm">Wishlist</span>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors"
+                            href="Myaccount.html">
+                            <span class="material-symbols-outlined text-lg">person</span>
+                            <span class="text-sm font-medium">Account Details</span>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors"
+                            href="Addressmanagement.html">
+                            <span class="material-symbols-outlined text-lg">home</span>
+                            <span class="text-sm font-medium">Addresses</span>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-content-light dark:text-content-dark hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors"
+                            href="Paymentmethod.html">
+                            <span class="material-symbols-outlined text-lg">payment</span>
+                            <span class="text-sm font-medium">Payment Methods</span>
+                        </a>
+
+                        <!-- Logout with function -->
+                        <a href="#" onclick="logoutUser()" class="flex items-center gap-3 px-3 py-2 rounded-lg text-content-light dark:text-content-dark 
+          hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors">
+                            <span class="material-symbols-outlined text-lg">logout</span>
+                            <span class="text-sm font-medium">Logout</span>
+                        </a>
+
+                    </nav>
+                </aside>
+
+                <div class="md:col-span-3">
+                    <div class="bg-background-light dark:bg-subtle-dark p-6 sm:p-8 rounded-lg shadow-sm">
+                        <h2 class="text-2xl font-bold mb-6">My Wishlist</h2>
+                        <div class="space-y-6">
+                            <div
+                                class="flex items-center gap-4 p-4 rounded-lg border border-border-light dark:border-border-dark">
+                                <img alt="Brown Hen" class="w-24 h-24 rounded-lg object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa38GF-a9c2sK56Lp4qMlBBOFXKVnTcyNmqDx0_nNrazFhVq0BdMfSkS6OB5SBCdyc8keLvQzP_unb8PHZrD76kMpIdXv2I-9xxyV-WFoqcT1VZvIAArwvPTsZ5cZgbvJHeepSFprB8qRNJUfz6Dw0zaOVGuL4lERZT-NLUSgvhyVkE9RdSgUw5kANUqOX0r6myMGJ4FmlY8JMKZ3qslo7XOItc8OlHzpest7g1NluCpYxk1Dey-R3WAiUUQMc7WC9xlBehvRsj20" />
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-lg">Brown Hen</h3>
+                                    <p class="text-primary font-semibold">$25.00</p>
+                                </div>
+                                <div class="flex items-center gap-2"> <button
+                                        class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-md hover:bg-primary/90 transition-colors">
+                                        <span class="material-symbols-outlined text-base mr-2">shopping_bag</span>
+                                        Add to Cart </button> <button
+                                        class="flex items-center justify-center rounded-lg h-10 w-10 text-content-light/70 dark:text-content-dark/70 hover:bg-subtle-light dark:hover:bg-background-dark transition-colors">
+                                        <span class="material-symbols-outlined text-xl">delete</span> </button>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 p-4 rounded-lg border border-border-light dark:border-border-dark">
+                                <img alt="Goat" class="w-24 h-24 rounded-lg object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFOzhefdzcXnp36_0IX5E3Cl2VqgGNLZsejkhS7L2TuLC_Qx8XoCgPwJy0Te1Js3MovoFRqvsZylE3LxnPB6ioTNbp6fRvMneR_2EL767DHXyD0ozSl4gL8M6Ntj0HGub6wPt8skgSVwkD4zn7km4hZN1BWF6ylnQQiXlqRvQyUMp2m3-tnvcvfpV5DkHJFOnhDMWlRIGZia2TJ8XaBexly0T8neD_ESwV0YoPwwZcNVTp37gLNb6pzeF2bM8voTOsJuQmKJKyzMM" />
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-lg">Young Goat</h3>
+                                    <p class="text-primary font-semibold">$75.00</p>
+                                </div>
+                                <div class="flex items-center gap-2"> <button
+                                        class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-md hover:bg-primary/90 transition-colors">
+                                        <span class="material-symbols-outlined text-base mr-2">shopping_bag</span>
+                                        Add to Cart </button> <button
+                                        class="flex items-center justify-center rounded-lg h-10 w-10 text-content-light/70 dark:text-content-dark/70 hover:bg-subtle-light dark:hover:bg-background-dark transition-colors">
+                                        <span class="material-symbols-outlined text-xl">delete</span> </button>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-4 p-4 rounded-lg border border-border-light dark:border-border-dark">
+                                <img alt="Fresh Eggs" class="w-24 h-24 rounded-lg object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0YmdH-5Ip4Qru5nM0JEwTfLauGKCyYOdpWZJLCSQfTzg8wrSwCbLwVOwJPUD557P4ApQ6blceCJUevv_MhZEfm29lwqQbB5ghSxasl7ahjno9vvLVoEKwD5pwhPGeVVdqmVQ_U8dGxSVMxgUOTEYh5UH5C_eznqIt2XqKL7GyUdzGI4cDAwRg5r4EHEc7ovvEsmDWmEBiqeSRlGsfQwbu9ZoIxdBLzUfUcdMHn_v6N_USWc8CEJDIf3K3mhcPraOCm-XaTGJ9mdI" />
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-lg">Dozen Fresh Eggs</h3>
+                                    <p class="text-primary font-semibold">$5.00</p>
+                                </div>
+                                <div class="flex items-center gap-2"> <button
+                                        class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-md hover:bg-primary/90 transition-colors">
+                                        <span class="material-symbols-outlined text-base mr-2">shopping_bag</span>
+                                        Add to Cart </button> <button
+                                        class="flex items-center justify-center rounded-lg h-10 w-10 text-content-light/70 dark:text-content-dark/70 hover:bg-subtle-light dark:hover:bg-background-dark transition-colors">
+                                        <span class="material-symbols-outlined text-xl">delete</span> </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Logout script -->
+    <script>
+        function logoutUser() {
+            if (confirm("Are you sure you want to logout?")) {
+                alert("You have been logged out successfully.");
+                window.location.href = "Home.html";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Native Bites - Payment Methods</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1dc91d",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112111",
+                        "content-light": "#1f2923",
+                        "content-dark": "#e8f5e9",
+                        "subtle-light": "#e8f5e9",
+                        "subtle-dark": "#2e4034",
+                        "border-light": "#dce5dc",
+                        "border-dark": "#38523f",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-content-light dark:text-content-dark"
+    x-data="{ addPaymentModal: false, editPaymentModal: false, removePaymentModal: false }">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <header
+            class="flex items-center justify-between whitespace-nowrap border-b border-border-light dark:border-border-dark px-4 sm:px-6 lg:px-10 py-3">
+            <div class="flex items-center gap-6">
+                <a class="flex items-center gap-3 text-xl font-bold" href="#">
+                    <span class="material-symbols-outlined text-primary text-3xl">grass</span>
+                    <span>Native Bites</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Shop</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Our Kutty Story</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="hidden sm:flex items-center rounded-lg bg-subtle-light dark:bg-subtle-dark">
+                    <span
+                        class="material-symbols-outlined pl-3 text-content-light/70 dark:text-content-dark/70">search</span>
+                    <input
+                        class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-transparent focus:outline-none focus:ring-0 border-none h-10 placeholder:text-content-light/50 dark:placeholder:text-content-dark/50 px-2 text-sm font-normal"
+                        placeholder="Search products..." type="search" />
+                </div>
+                <button
+                    class="flex items-center justify-center rounded-lg h-10 w-10 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors relative">
+                    <span class="material-symbols-outlined">favorite_border</span>
+                </button>
+                <button
+                    class="flex items-center justify-center rounded-lg h-10 w-10 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                </button>
+                <button class="relative">
+                    <img alt="User avatar" class="size-10 rounded-full"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8QP8Vtn2b4V68JXZdj-MC4LfMViOBGoWLtGAW0r039qul85zTbLrLgBnuNK-jxpFGJWwi5prcaigk940JWSBDGRWg4hXdMZ2Xb8Pt6VUJc4SJGmnGYhEAu6aj8KYqBNlkzIIn46yFA8woXYOYc8ZtVS11SIwAEDMBUHozMrgtesdYPHU50WkUitsIK_j732VIrR0CGs763rg_DelFVUZX8GZKm5jUwG8avVoP0x1AgEZ4gc9CNYpKDp5b8ktQAhSxMLBMOVShyo8" />
+                </button>
+            </div>
+        </header>
+        <main class="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+                <div>
+                    <h1 class="text-3xl font-bold">Payment Methods</h1>
+                    <p class="mt-1 text-content-light/70 dark:text-content-dark/70">Manage your saved payment methods.
+                    </p>
+                </div>
+                <button @click="addPaymentModal = true"
+                    class="mt-4 md:mt-0 flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white hover:bg-primary/90 transition-colors">
+                    <span class="material-symbols-outlined text-lg">add</span>
+                    Add New Payment Method
+                </button>
+            </div>
+            <div class="bg-subtle-light dark:bg-subtle-dark p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl font-bold mb-6">Your Saved Methods</h2>
+                <div class="space-y-6">
+                    <div
+                        class="flex flex-wrap items-center justify-between gap-4 p-4 border border-border-light dark:border-border-dark rounded-lg">
+                        <div class="flex items-center gap-4">
+                            <img alt="Visa" class="h-8"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBQernZtdQKydoWSsCrgpKlNblZhTwAZ5AN2PRX9x-IaoGlEdGBaR-HZOIyqaLMhlkV0GfCck_s4ePTP2J1IxHUyfoaNs6xtt8mwUYShWsaszz3VmXEas1BYQB6mDB-_IDyfypOBAyg_jhF8vTqyovczs5iQ3G8v78klB37c2uFIsVY8nmDEWJUUDlXGyMj-ebsHSdydlliezSI-5eJaI4IrrUNPSCVJZQ9gqrxF4xqPI_Ad1X3CqNxmjeWciKmb8nNnCc6hOdgVo" />
+                            <div>
+                                <p class="font-semibold">Visa ending in 1234</p>
+                                <p class="text-sm text-content-light/70 dark:text-content-dark/70">Expires 12/2025</p>
+                            </div>
+                            <span
+                                class="ml-4 px-2 py-1 text-xs font-semibold bg-green-200 text-green-800 rounded-full">Default</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button @click="editPaymentModal = true"
+                                class="flex items-center justify-center rounded-md h-9 w-9 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                                <span class="material-symbols-outlined text-lg">edit</span>
+                            </button>
+                            <button @click="removePaymentModal = true"
+                                class="flex items-center justify-center rounded-md h-9 w-9 hover:bg-red-500/20 transition-colors text-red-500">
+                                <span class="material-symbols-outlined text-lg">delete</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="flex flex-wrap items-center justify-between gap-4 p-4 border border-border-light dark:border-border-dark rounded-lg">
+                        <div class="flex items-center gap-4">
+                            <img alt="PayPal" class="h-8"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE43qssqMrUYVXxQtii8MlT0MyH8FVKgduXlmpxqq3euJNEamuxr6EpBC3wq6M4el26BEvEYSMHZGJ44u5s8-IRLouuLvGN7pwmhBnbCUwHhJ7onOcGuLXbfE9TH9JiSXfufGEUlO4VO0XSrQllTEzp70k5zPAxRd2esvas2Bg2Yd-WpnABQpqqAWMYNZ1C4cReOALb6QtiQVP-rylTcwoXirN8lko0unK1y5k8xewiA80zo1fEVoEqFLKTesD6hur9RIOxLa-40Y" />
+                            <div>
+                                <p class="font-semibold">john.doe@example.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <button class="text-sm font-medium text-primary hover:underline">Set as Default</button>
+                            <button @click="editPaymentModal = true"
+                                class="flex items-center justify-center rounded-md h-9 w-9 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                                <span class="material-symbols-outlined text-lg">edit</span>
+                            </button>
+                            <button @click="removePaymentModal = true"
+                                class="flex items-center justify-center rounded-md h-9 w-9 hover:bg-red-500/20 transition-colors text-red-500">
+                                <span class="material-symbols-outlined text-lg">delete</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50" style="display: none;"
+        x-show="addPaymentModal" x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-end="opacity-100" x-transition:enter-start="opacity-0"
+        x-transition:leave="transition ease-in duration-200" x-transition:leave-end="opacity-0"
+        x-transition:leave-start="opacity-100">
+        <div @click.away="addPaymentModal = false"
+            class="bg-background-light dark:bg-background-dark rounded-lg shadow-xl w-full max-w-md mx-4">
+            <div class="p-6 border-b border-border-light dark:border-border-dark">
+                <h3 class="text-xl font-bold">Add a New Payment Method</h3>
+            </div>
+            <div class="p-6 space-y-4">
+                <div class="grid grid-cols-1 gap-4">
+                    <label class="block text-sm font-medium text-content-light dark:text-content-dark"
+                        for="card-number">Card Number</label>
+                    <div class="relative">
+                        <input
+                            class="form-input w-full rounded-lg border-border-light dark:border-border-dark bg-subtle-light dark:bg-subtle-dark focus:border-primary focus:ring-primary"
+                            id="card-number" placeholder="•••• •••• •••• ••••" type="text" />
+                        <span
+                            class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-content-light/50">credit_card</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-content-light dark:text-content-dark"
+                            for="expiry-date">Expiry Date</label>
+                        <input
+                            class="form-input w-full rounded-lg border-border-light dark:border-border-dark bg-subtle-light dark:bg-subtle-dark focus:border-primary focus:ring-primary"
+                            id="expiry-date" placeholder="MM / YY" type="text" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-content-light dark:text-content-dark"
+                            for="cvc">CVC</label>
+                        <input
+                            class="form-input w-full rounded-lg border-border-light dark:border-border-dark bg-subtle-light dark:bg-subtle-dark focus:border-primary focus:ring-primary"
+                            id="cvc" placeholder="•••" type="text" />
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-content-light dark:text-content-dark"
+                        for="name-on-card">Name on Card</label>
+                    <input
+                        class="form-input w-full rounded-lg border-border-light dark:border-border-dark bg-subtle-light dark:bg-subtle-dark focus:border-primary focus:ring-primary"
+                        id="name-on-card" placeholder="John Doe" type="text" />
+                </div>
+                <div class="flex items-center">
+                    <input
+                        class="form-checkbox rounded text-primary focus:ring-primary/50 bg-subtle-light dark:bg-subtle-dark border-border-light dark:border-border-dark"
+                        id="default-payment" type="checkbox" />
+                    <label class="ml-2 block text-sm text-content-light dark:text-content-dark"
+                        for="default-payment">Set as default payment method</label>
+                </div>
+            </div>
+            <div class="p-6 bg-subtle-light dark:bg-subtle-dark/50 rounded-b-lg flex justify-end gap-4">
+                <button @click="addPaymentModal = false"
+                    class="px-4 py-2 text-sm font-medium rounded-lg hover:bg-subtle-dark dark:hover:bg-subtle-light transition-colors">Cancel</button>
+                <button @click="addPaymentModal = false"
+                    class="px-4 py-2 text-sm font-bold text-white bg-primary rounded-lg hover:bg-primary/90 transition-colors">Add
+                    Card</button>
+            </div>
+        </div>
+    </div>
+    <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50" style="display: none;"
+        x-show="editPaymentModal" x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-end="opacity-100" x-transition:enter-start="opacity-0"
+        x-transition:leave="transition ease-in duration-200" x-transition:leave-end="opacity-0"
+        x-transition:leave-start="opacity-100">
+        <div @click.away="editPaymentModal = false"
+            class="bg-background-light dark:bg-background-dark rounded-lg shadow-xl w-full max-w-md mx-4">
+            <div class="p-6 border-b border-border-light dark:border-border-dark">
+                <h3 class="text-xl font-bold">Edit Payment Method</h3>
+            </div>
+            <div class="p-6 space-y-4">
+                <p class="font-semibold">Visa ending in 1234</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-content-light dark:text-content-dark"
+                            for="edit-expiry-date">Expiry Date</label>
+                        <input
+                            class="form-input w-full rounded-lg border-border-light dark:border-border-dark bg-subtle-light dark:bg-subtle-dark focus:border-primary focus:ring-primary"
+                            id="edit-expiry-date" placeholder="MM / YY" type="text" value="12 / 25" />
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-content-light dark:text-content-dark"
+                        for="edit-name-on-card">Name on Card</label>
+                    <input
+                        class="form-input w-full rounded-lg border-border-light dark:border-border-dark bg-subtle-light dark:bg-subtle-dark focus:border-primary focus:ring-primary"
+                        id="edit-name-on-card" placeholder="John Doe" type="text" value="John Doe" />
+                </div>
+            </div>
+            <div class="p-6 bg-subtle-light dark:bg-subtle-dark/50 rounded-b-lg flex justify-end gap-4">
+                <button @click="editPaymentModal = false"
+                    class="px-4 py-2 text-sm font-medium rounded-lg hover:bg-subtle-dark dark:hover:bg-subtle-light transition-colors">Cancel</button>
+                <button @click="editPaymentModal = false"
+                    class="px-4 py-2 text-sm font-bold text-white bg-primary rounded-lg hover:bg-primary/90 transition-colors">Save
+                    Changes</button>
+            </div>
+        </div>
+    </div>
+    <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/50" style="display: none;"
+        x-show="removePaymentModal" x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-end="opacity-100" x-transition:enter-start="opacity-0"
+        x-transition:leave="transition ease-in duration-200" x-transition:leave-end="opacity-0"
+        x-transition:leave-start="opacity-100">
+        <div @click.away="removePaymentModal = false"
+            class="bg-background-light dark:bg-background-dark rounded-lg shadow-xl w-full max-w-md mx-4">
+            <div class="p-6">
+                <div class="text-center">
+                    <span class="material-symbols-outlined text-5xl text-red-500">warning</span>
+                    <h3 class="mt-2 text-xl font-bold">Remove Payment Method</h3>
+                    <p class="mt-2 text-sm text-content-light/70 dark:text-content-dark/70">Are you sure you want to
+                        remove this payment method? This action cannot be undone.</p>
+                </div>
+            </div>
+            <div class="p-6 bg-subtle-light dark:bg-subtle-dark/50 rounded-b-lg flex justify-center gap-4">
+                <button @click="removePaymentModal = false"
+                    class="px-6 py-2 text-sm font-medium rounded-lg hover:bg-subtle-dark dark:hover:bg-subtle-light transition-colors">Cancel</button>
+                <button @click="removePaymentModal = false"
+                    class="px-6 py-2 text-sm font-bold text-white bg-red-600 rounded-lg hover:bg-red-700 transition-colors">Remove</button>
+            </div>
+        </div>
+    </div>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</body>
+
+</html>

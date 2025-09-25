@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Native Bites - My Account</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1dc91d",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112111",
+                        "content-light": "#1f2923",
+                        "content-dark": "#e8f5e9",
+                        "subtle-light": "#e8f5e9",
+                        "subtle-dark": "#2e4034",
+                        "border-light": "#dce5dc",
+                        "border-dark": "#38523f",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        @layer utilities {
+            .tab-active {
+                @apply border-primary text-primary font-bold;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-content-light dark:text-content-dark"
+    x-data="{ activeTab: 'orders' }">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <header
+            class="flex items-center justify-between whitespace-nowrap border-b border-border-light dark:border-border-dark px-4 sm:px-6 lg:px-10 py-3">
+            <div class="flex items-center gap-6">
+                <a class="flex items-center gap-3 text-xl font-bold" href="#">
+                    <span class="material-symbols-outlined text-primary text-3xl">grass</span>
+                    <span>Native Bites</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Shop</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Our Kutty Story</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="hidden sm:flex items-center rounded-lg bg-subtle-light dark:bg-subtle-dark">
+                    <span
+                        class="material-symbols-outlined pl-3 text-content-light/70 dark:text-content-dark/70">search</span>
+                    <input
+                        class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-transparent focus:outline-none focus:ring-0 border-none h-10 placeholder:text-content-light/50 dark:placeholder:text-content-dark/50 px-2 text-sm font-normal"
+                        placeholder="Search products..." type="search" />
+                </div>
+                <button
+                    class="flex items-center justify-center rounded-lg h-10 w-10 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors relative">
+                    <span class="material-symbols-outlined">favorite_border</span>
+                </button>
+                <button
+                    class="flex items-center justify-center rounded-lg h-10 w-10 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                </button>
+                <button class="relative">
+                    <img alt="User avatar" class="size-10 rounded-full"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8QP8Vtn2b4V68JXZdj-MC4LfMViOBGoWLtGAW0r039qul85zTbLrLgBnuNK-jxpFGJWwi5prcaigk940JWSBDGRWg4hXdMZ2Xb8Pt6VUJc4SJGmnGYhEAu6aj8KYqBNlkzIIn46yFA8woXYOYc8ZtVS11SIwAEDMBUHozMrgtesdYPHU50WkUitsIK_j732VIrR0CGs763rg_DelFVUZX8GZKm5jUwG8avVoP0x1AgEZ4gc9CNYpKDp5b8ktQAhSxMLBMOVShyo8" />
+                </button>
+            </div>
+        </header>
+        <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <h1 class="text-3xl font-bold mb-8">Farm User Dashboard</h1>
+            <div class="border-b border-border-light dark:border-border-dark mb-8">
+                <nav aria-label="Tabs" class="-mb-px flex space-x-6">
+                    <button :class="{ 'tab-active': activeTab === 'orders' }" @click="activeTab = 'orders'"
+                        class="flex items-center gap-2 whitespace-nowrap border-b-2 border-transparent py-4 px-1 text-sm font-medium text-content-light/70 dark:text-content-dark/70 hover:border-primary/50 hover:text-primary/80 transition-colors">
+                        <span class="material-symbols-outlined text-lg">receipt_long</span> Orders
+                    </button>
+                    <button :class="{ 'tab-active': activeTab === 'addresses' }" @click="activeTab = 'addresses'"
+                        class="flex items-center gap-2 whitespace-nowrap border-b-2 border-transparent py-4 px-1 text-sm font-medium text-content-light/70 dark:text-content-dark/70 hover:border-primary/50 hover:text-primary/80 transition-colors">
+                        <span class="material-symbols-outlined text-lg">home</span> Addresses
+                    </button>
+                    <button :class="{ 'tab-active': activeTab === 'payment' }" @click="activeTab = 'payment'"
+                        class="flex items-center gap-2 whitespace-nowrap border-b-2 border-transparent py-4 px-1 text-sm font-medium text-content-light/70 dark:text-content-dark/70 hover:border-primary/50 hover:text-primary/80 transition-colors">
+                        <span class="material-symbols-outlined text-lg">payment</span> Payment Methods
+                    </button>
+                    <button :class="{ 'tab-active': activeTab === 'account' }" @click="activeTab = 'account'"
+                        class="flex items-center gap-2 whitespace-nowrap border-b-2 border-transparent py-4 px-1 text-sm font-medium text-content-light/70 dark:text-content-dark/70 hover:border-primary/50 hover:text-primary/80 transition-colors">
+                        <span class="material-symbols-outlined text-lg">person</span> Account Details
+                    </button>
+                </nav>
+            </div>
+            <div class="grid grid-cols-1">
+                <div class="space-y-6" x-show="activeTab === 'orders'">
+                    <h2 class="text-2xl font-bold">Order History</h2>
+                    <div class="bg-subtle-light dark:bg-subtle-dark p-6 rounded-lg shadow-sm">
+                        <div class="divide-y divide-border-light dark:divide-border-dark">
+                            <div class="py-4 flex flex-wrap items-center justify-between gap-4">
+                                <div>
+                                    <p class="font-semibold">Order #1024</p>
+                                    <p class="text-sm text-content-light/70 dark:text-content-dark/70">Placed on July
+                                        15, 2023</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-semibold">$105.00</p>
+                                    <p class="text-sm text-green-600 dark:text-green-400">Delivered</p>
+                                </div>
+                                <button
+                                    class="flex items-center justify-center rounded-lg h-10 px-4 border border-border-light dark:border-border-dark text-sm font-bold hover:bg-background-light dark:hover:bg-background-dark transition-colors">View
+                                    Details</button>
+                            </div>
+                            <div class="py-4 flex flex-wrap items-center justify-between gap-4">
+                                <div>
+                                    <p class="font-semibold">Order #987</p>
+                                    <p class="text-sm text-content-light/70 dark:text-content-dark/70">Placed on June
+                                        28, 2023</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-semibold">$25.00</p>
+                                    <p class="text-sm text-green-600 dark:text-green-400">Delivered</p>
+                                </div>
+                                <button
+                                    class="flex items-center justify-center rounded-lg h-10 px-4 border border-border-light dark:border-border-dark text-sm font-bold hover:bg-background-light dark:hover:bg-background-dark transition-colors">View
+                                    Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6" x-cloak="" x-show="activeTab === 'addresses'">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-bold">Manage Addresses</h2>
+                        <button
+                            class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-md hover:bg-primary/90 transition-colors">
+                            <span class="material-symbols-outlined text-base mr-2">add</span>
+                            Add New Address
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-subtle-light dark:bg-subtle-dark p-6 rounded-lg shadow-sm">
+                            <h3 class="font-bold text-lg mb-2">Shipping Address</h3>
+                            <p>John Doe</p>
+                            <p>123 Green Pasture Lane</p>
+                            <p>Farmville, FA 54321</p>
+                            <p>United States</p>
+                            <div class="mt-4 flex gap-2">
+                                <button class="text-sm font-medium text-primary hover:underline">Edit</button>
+                                <span class="text-content-light/50 dark:text-content-dark/50">|</span>
+                                <button class="text-sm font-medium text-red-600 hover:underline">Remove</button>
+                            </div>
+                        </div>
+                        <div class="bg-subtle-light dark:bg-subtle-dark p-6 rounded-lg shadow-sm">
+                            <h3 class="font-bold text-lg mb-2">Billing Address</h3>
+                            <p>Jane Smith</p>
+                            <p>456 Farmer's Market Rd</p>
+                            <p>Market Town, MT 98765</p>
+                            <p>United States</p>
+                            <div class="mt-4 flex gap-2">
+                                <button class="text-sm font-medium text-primary hover:underline">Edit</button>
+                                <span class="text-content-light/50 dark:text-content-dark/50">|</span>
+                                <button class="text-sm font-medium text-red-600 hover:underline">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6" x-cloak="" x-show="activeTab === 'payment'">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-bold">Payment Methods</h2>
+                        <button
+                            class="flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-md hover:bg-primary/90 transition-colors">
+                            <span class="material-symbols-outlined text-base mr-2">add</span>
+                            Add New Card
+                        </button>
+                    </div>
+                    <div class="bg-subtle-light dark:bg-subtle-dark p-6 rounded-lg shadow-sm">
+                        <div class="space-y-4">
+                            <div
+                                class="flex items-center justify-between p-4 rounded-lg border border-border-light dark:border-border-dark">
+                                <div class="flex items-center gap-4">
+                                    <img alt="Visa" class="h-8"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBQernZtdQKydoWSsCrgpKlNblZhTwAZ5AN2PRX9x-IaoGlEdGBaR-HZOIyqaLMhlkV0GfCck_s4ePTP2J1IxHUyfoaNs6xtt8mwUYShWsaszz3VmXEas1BYQB6mDB-_IDyfypOBAyg_jhF8vTqyovczs5iQ3G8v78klB37c2uFIsVY8nmDEWJUUDlXGyMj-ebsHSdydlliezSI-5eJaI4IrrUNPSCVJZQ9gqrxF4xqPI_Ad1X3CqNxmjeWciKmb8nNnCc6hOdgVo" />
+                                    <div>
+                                        <p class="font-semibold">Visa ending in 1234</p>
+                                        <p class="text-sm text-content-light/70 dark:text-content-dark/70">Expires
+                                            12/2025</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <button class="text-sm font-medium text-primary hover:underline">Edit</button>
+                                    <span class="text-content-light/50 dark:text-content-dark/50">|</span>
+                                    <button class="text-sm font-medium text-red-600 hover:underline">Remove</button>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center justify-between p-4 rounded-lg border border-border-light dark:border-border-dark">
+                                <div class="flex items-center gap-4">
+                                    <img alt="Mastercard" class="h-8"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxPpeH31z2w4XSOyg7SSfC6m8V-y_MPFSDaURCjQ8kMPY1FAphCwC2GkCPMFOsj4_5OEPovc29WbBUqNrdX-TKf73YqE7syA1aQmxKZGzGkZMIzBxnxrsBCKMgpfzh2TalS1BAB8TMty9twj72SbF8EeUi3LmOG8YVBb77I7fcbi0g23CAIfRoTHuSc6gCG-sIkI6hpTFCItzsQ2l0dlHodY0VamtMyY9Uw2O_5hBOPf5htuxbq4C6fA3mqDMgcZDyiKabfeoEWwk" />
+                                    <div>
+                                        <p class="font-semibold">Mastercard ending in 5678</p>
+                                        <p class="text-sm text-content-light/70 dark:text-content-dark/70">Expires
+                                            08/2024</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <button class="text-sm font-medium text-primary hover:underline">Edit</button>
+                                    <span class="text-content-light/50 dark:text-content-dark/50">|</span>
+                                    <button class="text-sm font-medium text-red-600 hover:underline">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6" x-cloak="" x-show="activeTab === 'account'">
+                    <h2 class="text-2xl font-bold">Account Details</h2>
+                    <div class="bg-subtle-light dark:bg-subtle-dark p-6 sm:p-8 rounded-lg shadow-sm">
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="text-sm font-medium" for="first_name">First Name</label>
+                                    <input
+                                        class="form-input mt-1 block w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-subtle-dark/50 focus:border-primary focus:ring-primary"
+                                        id="first_name" type="text" value="John" />
+                                </div>
+                                <div>
+                                    <label class="text-sm font-medium" for="last_name">Last Name</label>
+                                    <input
+                                        class="form-input mt-1 block w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-subtle-dark/50 focus:border-primary focus:ring-primary"
+                                        id="last_name" type="text" value="Doe" />
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium" for="email">Email Address</label>
+                                <input
+                                    class="form-input mt-1 block w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-subtle-dark/50 focus:border-primary focus:ring-primary"
+                                    id="email" type="email" value="john.doe@example.com" />
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium" for="password">Change Password</label>
+                                <input
+                                    class="form-input mt-1 block w-full rounded-lg border-border-light dark:border-border-dark bg-background-light dark:bg-subtle-dark/50 focus:border-primary focus:ring-primary"
+                                    id="password" placeholder="Leave blank to keep current password" type="password" />
+                            </div>
+                            <div class="flex justify-end">
+                                <button
+                                    class="flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold shadow-md hover:bg-primary/90 transition-colors">
+                                    Save Changes
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Native Bites - Eggs</title>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1dc91d",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112111",
+                        "content-light": "#111711",
+                        "content-dark": "#e8f0e8",
+                        "subtle-light": "#4a754a",
+                        "subtle-dark": "#8baf8b",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a321a",
+                        "border-light": "#e3e9e3",
+                        "border-dark": "#2a4f2a",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-content-light dark:text-content-dark">
+    <div class="flex flex-col min-h-screen">
+        <header
+            class="sticky top-0 z-10 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm border-b border-border-light dark:border-border-dark">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center gap-8">
+                        <a class="flex items-center gap-3 text-xl font-bold text-content-light dark:text-content-dark"
+                            href="#">
+                            <span class="material-symbols-outlined text-primary text-3xl">egg</span>
+                            <span>Native Bites</span>
+                        </a>
+                        <nav class="hidden md:flex items-center gap-6">
+                            <a class="text-sm font-medium hover:text-primary transition-colors"
+                                href="Hens.html">Hens</a>
+                            <a class="text-sm font-medium hover:text-primary transition-colors"
+                                href="Goats.html">Goats</a>
+                            <a class="text-sm font-medium hover:text-primary transition-colors" href="Shop.html">Other
+                                Products</a>
+                        </nav>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="relative hidden sm:block">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-subtle-light dark:text-subtle-dark">search</span>
+                            <input
+                                class="w-48 lg:w-64 h-10 pl-10 pr-4 rounded-full bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                                placeholder="Search products..." type="text" />
+                        </div>
+                        <a href="Cart.html"><button
+                                class="flex items-center justify-center gap-2 h-10 px-4 rounded-full bg-primary/10 dark:bg-primary/20 hover:bg-primary/20 dark:hover:bg-primary/30 text-primary font-bold text-sm transition-colors">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                                <span class="hidden sm:inline">Cart</span>
+                                <span
+                                    class="bg-primary text-white text-xs font-bold rounded-full size-5 flex items-center justify-center">3</span>
+                            </button></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <aside class="lg:w-1/4">
+                    <div class="sticky top-24 space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4 text-content-light dark:text-content-dark">Eggs</h2>
+                            <p class="text-subtle-light dark:text-subtle-dark">Browse our selection of farm-fresh eggs.
+                            </p>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="font-bold text-lg">Filter by</h3>
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium" for="type">Type</label>
+                                <select
+                                    class="w-full h-10 px-3 rounded-lg bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark focus:ring-1 focus:ring-primary focus:border-primary"
+                                    id="type">
+                                    <option>All Types</option>
+                                    <option selected="">Chicken</option>
+                                    <option>Duck</option>
+                                    <option>Quail</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium" for="size">Size</label>
+                                <select
+                                    class="w-full h-10 px-3 rounded-lg bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark focus:ring-1 focus:ring-primary focus:border-primary"
+                                    id="size">
+                                    <option>All Sizes</option>
+                                    <option>Medium</option>
+                                    <option>Large</option>
+                                    <option>Jumbo</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium" for="quantity">Quantity</label>
+                                <select
+                                    class="w-full h-10 px-3 rounded-lg bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark focus:ring-1 focus:ring-primary focus:border-primary"
+                                    id="quantity">
+                                    <option>Any</option>
+                                    <option>Half Dozen</option>
+                                    <option>Dozen</option>
+                                    <option>Tray</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="font-bold text-lg">Sort by</h3>
+                            <div class="flex flex-col space-y-2">
+                                <button
+                                    class="w-full text-left h-10 px-3 rounded-lg bg-primary/20 text-primary font-medium transition-colors">Price:
+                                    Low to High</button>
+                                <button
+                                    class="w-full text-left h-10 px-3 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">Price:
+                                    High to Low</button>
+                                <button
+                                    class="w-full text-left h-10 px-3 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors">Popularity</button>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <div class="lg:w-3/4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                        <div
+                            class="bg-surface-light dark:bg-surface-dark rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                            <div class="relative">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrpdEy1ztxFivry3gSP4P6cDaT4eslFoPZLoXmpsBgNP9WDngYsQoC4EyiwZjIFBUjD8yFV6dd7MRvReBOfWjGDdPlM-P9gcBHgKHct-A-QhzQVSS9YxjEll58RBL1UP7fDVz7jQT9lB749G-il3NZpqd3dWA_hJXqZrcTbBvj1jO4FZjL1qQZaUbKX12iiFZePQVDxtlzfkQ5R-dSXQufJGTAHbQbQIhBSKLNlPfuz7JxNXgFK1K9wW6p8waCj-RlKx7nmDeckWI");'>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 p-4">
+                                    <h3 class="text-white text-lg font-bold">Chicken Eggs</h3>
+                                    <p class="text-gray-200 text-sm">Organic, Free-Range</p>
+                                </div>
+                            </div>
+                            <div class="p-4 space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <p class="text-xl font-bold text-primary">$4.99</p>
+                                    <p class="text-sm text-subtle-light dark:text-subtle-dark">/ dozen</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <a href="Checkout.html"><button
+                                            class="w-full h-10 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105 transform transition-transform duration-300">
+                                            Buy Now
+                                        </button></a>
+                                    <a href="Cart.html"><button
+                                            class="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 dark:bg-primary/20 text-primary font-bold text-sm flex items-center justify-center gap-2 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors">
+                                            <span class="material-symbols-outlined">shopping_cart</span></a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-surface-light dark:bg-surface-dark rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                            <div class="relative">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0tJYnRcaMK0mTQngD-um0v6HbQoXDUvDXrfRDpujHv7h0h6_QrrI2IixCg7uqMKvwr06joEq7OvYsu6XrrP905A7fGmTowK-SAXyAHGmet-Nl8O4OEHf54wCFrQ7sLBBsiLhp9g7pzyGkl-yFi0t0pB3JZVmD4t76EiTpDkjwOce2RNwtSxpayrzL5k-_oAHbPV8H-z4BJvQQMU7QIy7rLF1PNi3pWrPniauel7ehuWM2O_36ENhNhJoITq4Xj57xTZacMkVDq4M");'>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 p-4">
+                                    <h3 class="text-white text-lg font-bold">Duck Eggs</h3>
+                                    <p class="text-gray-200 text-sm">Large, Rich Yolk</p>
+                                </div>
+                            </div>
+                            <div class="p-4 space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <p class="text-xl font-bold text-primary">$6.99</p>
+                                    <p class="text-sm text-subtle-light dark:text-subtle-dark">/ dozen</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <a href="Checkout.html"><button
+                                            class="w-full h-10 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105 transform transition-transform duration-300">
+                                            Buy Now
+                                        </button></a>
+                                    <a href="Cart.html"><button
+                                            class="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 dark:bg-primary/20 text-primary font-bold text-sm flex items-center justify-center gap-2 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors">
+                                            <span class="material-symbols-outlined">shopping_cart</span></a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-surface-light dark:bg-surface-dark rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                            <div class="relative">
+                                <div class="w-full bg-center bg-no-repeat aspect-square bg-cover"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCsymRcov2dwL9rLJ2KgOCBwHTDvyknsid3DtDfjJrx-IbKwm607h81mjw00RQz3JVDz50egatiGduvF8tEuupb4NQCKGeF50MaQ-xNPpZXFpm-kR91Fp4aakdCyl0cj7dJlzB-vi3mQHaX3_XjG_zXbm2exzqFjSDDQpIi1quUtbBwKiZw5ufbhWLFrQ7_Fl-8OPCUK8WyqRDhRKL_QsRWJyc_plRUVHiqJhlDbZPvKPggJW6FbRgyfYVULEU549B2YvNxpaMxsAQ");'>
+                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 p-4">
+                                    <h3 class="text-white text-lg font-bold">Quail Eggs</h3>
+                                    <p class="text-gray-200 text-sm">Small, Delicate Flavor</p>
+                                </div>
+                            </div>
+                            <div class="p-4 space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <p class="text-xl font-bold text-primary">$3.99</p>
+                                    <p class="text-sm text-subtle-light dark:text-subtle-dark">/ tray</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <a href="Checkout.html"><button
+                                            class="w-full h-10 rounded-full bg-primary text-white font-bold text-sm flex items-center justify-center gap-2 group-hover:scale-105 transform transition-transform duration-300">
+                                            Buy Now
+                                        </button></a>
+                                    <a href="Cart.html"><button
+                                            class="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 dark:bg-primary/20 text-primary font-bold text-sm flex items-center justify-center gap-2 group-hover:bg-primary/20 dark:group-hover:bg-primary/30 transition-colors">
+                                            <span class="material-symbols-outlined">shopping_cart</span></a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

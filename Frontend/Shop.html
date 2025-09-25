@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Native Bites - Shop</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&display=swap"
+        rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1dc91d",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112111",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    // Add keyframes for the pulse animation
+                    keyframes: {
+                        pulse_pop: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                        },
+                    },
+                    animation: {
+                        'pulse-pop': 'pulse_pop 3s ease-in-out infinite',
+                    }
+                },
+            },
+        }
+    </script>
+
+    <style>
+        /* Base styles for the chat container (icon state) */
+        .chatbot-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1000;
+            cursor: pointer;
+            /* Smooth transition for size change and position */
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        /* Styles for the OPEN state (30% screen coverage on desktop) */
+        .chatbot-container.open {
+            /* Desktop Size: 30% Width, 70% Height */
+            width: 30vw;
+            min-width: 350px;
+            height: 70vh;
+
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            /* Transition for the inner content's fade-in/out */
+            transition: width 0.4s, height 0.4s, bottom 0.4s, right 0.4s, left 0.4s, transform 0.4s;
+        }
+
+        /* Mobile optimization: make it larger on small screens */
+        @media (max-width: 768px) {
+            .chatbot-container.open {
+                width: 90vw;
+                height: 80vh;
+                bottom: 5vh;
+                right: 5vw;
+                /* Recenter on mobile */
+                left: 5vw;
+                min-width: auto;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-black dark:text-white">
+    <div class="flex flex-col min-h-screen">
+        <header
+            class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-black/10 dark:border-white/10">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center gap-8">
+                        <a class="flex items-center gap-2 text-xl font-bold" href="#">
+                            <span class="material-symbols-outlined text-primary text-3xl">grass</span>
+                            <span>Native Bites</span>
+                        </a>
+                        <nav class="hidden md:flex items-center gap-6">
+                            <a class="text-sm font-medium text-black/60 dark:text-white/60 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="About.html">Our Kutty Story</a>
+                            <a class="text-sm font-medium text-black/60 dark:text-white/60 hover:text-primary dark:hover:text-primary transition-colors"
+                                href="Contact.html">Contact</a>
+                        </nav>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button
+                            class="sm:hidden flex items-center justify-center p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+                            <span class="material-symbols-outlined">search</span>
+                        </button>
+                        <a class="flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium bg-primary/20 dark:bg-primary/30 text-primary dark:text-white/90 hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors"
+                            href="Ordertracking.html">
+                            <span class="material-symbols-outlined">local_shipping</span>
+                            <span class="hidden sm:inline">Track Order</span>
+                        </a>
+                        <a href="Cart.html"><button
+                                class="flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                                <span class="hidden sm:inline">Cart</span>
+                                <span>(0)</span>
+                            </button></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+                <aside class="lg:w-1/4">
+                    <div class="space-y-8 sticky top-24">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">Categories</h2>
+                            <div class="flex flex-wrap gap-2">
+                                <button
+                                    class="px-4 py-2 rounded-full text-sm font-medium bg-primary/20 dark:bg-primary/30 text-primary dark:text-white/90">All</button>
+                                <a href="Hens.html"><button
+                                        class="px-4 py-2 rounded-full text-sm font-medium bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors">Hens</button></a>
+                                <a href="Goats.html"><button
+                                        class="px-4 py-2 rounded-full text-sm font-medium bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors">Goats</button></a>
+                                <a href="Eggs.html"><button
+                                        class="px-4 py-2 rounded-full text-sm font-medium bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors">Eggs</button></a>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">Filters</h3>
+                            <div class="space-y-4">
+                                <p class="font-medium">Price Range</p>
+                                <div class="relative pt-1">
+                                    <input
+                                        class="w-full h-2 bg-black/10 dark:bg-white/10 rounded-lg appearance-none cursor-pointer accent-primary"
+                                        max="200" min="0" type="range" value="100" />
+                                    <div class="flex justify-between text-xs text-black/50 dark:text-white/50 px-1 mt-1">
+                                        <span>$0</span>
+                                        <span>$200+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <div class="lg:w-3/4">
+                    <div class="mb-8">
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-black/40 dark:text-white/40">search</span>
+                            <input
+                                class="w-full bg-background-light dark:bg-background-dark border border-black/10 dark:border-white/10 focus:border-primary focus:ring-primary rounded-full pl-12 pr-4 py-3 text-base"
+                                placeholder="Search for products..." type="text" />
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                        <div
+                            class="group relative flex flex-col bg-background-light dark:bg-background-dark border border-black/10 dark:border-white/10 rounded-lg overflow-hidden transition-shadow hover:shadow-xl">
+                            <div class="aspect-square w-full overflow-hidden">
+                                <img alt="Brown Egg-Laying Hen"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPUIwEmEAORjTgOmI9FwNokxF90I_F3Qq3Wm-QzYH_8ASp93NgYQYQ8IhoFgquxxPyV1tFdoKW_X5-jHFNoqzWzVt2i2r0Jrv6ZSYhQCFToybuXsC6l06y3yYqt0vn7W0COPwIHXBdnxIYLG3yH60wTPv95lkjIr6qq8pO6_07kDXxXjzQB2AmqXhxRnflfJW9blZrc_HovvVkYvfQQsBp5p9LeNrYfJt_lgxiLJ3NYs0JJ_SugBIdkvsS8ePaos8RprGtzYrmxgU" />
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-lg">Brown Egg-Laying Hen</h3>
+                                <p class="text-primary font-semibold mt-1">$25</p>
+                                <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5 flex gap-2">
+                                    <a href="Cart.html"><button
+                                            class="w-full rounded bg-primary px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-primary/90 transition-colors">Add
+                                            to Cart</button></a>
+                                    <a href="Checkout.html"><button
+                                            class="w-full rounded bg-black/5 dark:bg-white/5 px-4 py-2 text-sm font-bold hover:bg-black/10 dark:hover:bg-white/10 transition-colors">Buy
+                                            Now</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative flex flex-col bg-background-light dark:bg-background-dark border border-black/10 dark:border-white/10 rounded-lg overflow-hidden transition-shadow hover:shadow-xl">
+                            <div class="aspect-square w-full overflow-hidden">
+                                <img alt="Alpine Goat"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGCqbOM_WHDLwlbpznqGLM-ZJtwUDXvgdZcpR-XwE3E-f5IKcPaRwN8zVwzbexDWudBRDrGol3YDNTgC1OwgNpiC9l_e8ziMpiUPv6UOKuWq_RRSUQKy9XkkYrGb0Q1Do4PzJ69RM1xc8rqPUnFNweFQR2N1-1hY4CsREMBS2cf-WmCfbJV2O4PxXcIhB9uHIvojIV59RqtkbNxrHvBRsZDI0tIlB4CLZkmMeiiwS75PObCx4CEfCqY932C_ROFY-z9g_v84MiGi4" />
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-lg">Alpine Goat</h3>
+                                <p class="text-primary font-semibold mt-1">$150</p>
+                                <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5 flex gap-2">
+                                    <a href="Cart.html"><button
+                                            class="w-full rounded bg-primary px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-primary/90 transition-colors">Add
+                                            to Cart</button></a>
+                                    <a href="Checkout.html"><button
+                                            class="w-full rounded bg-black/5 dark:bg-white/5 px-4 py-2 text-sm font-bold hover:bg-black/10 dark:hover:bg-white/10 transition-colors">Buy
+                                            Now</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative flex flex-col bg-background-light dark:bg-background-dark border border-black/10 dark:border-white/10 rounded-lg overflow-hidden transition-shadow hover:shadow-xl">
+                            <div class="aspect-square w-full overflow-hidden">
+                                <img alt="Fresh Farm Eggs"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZkH0wHo-9NGyg1oSfeEnFs4HoQRQ1klf7H4Fkhh1Z8H-wR01FQTd_xsia8qsyr2kRt1KFQKprvIh0UB_T-qPUki7drgaeHLGFYbyZeJJNel-WtF1qinFwwf7RUvwvd3Rdg3Kxd6tP-AFAJwimOb8nvwNe1aZ8wyPnyQnvbZpWecn2SvU9u845w69r5yrLAhaBvk_oNRFc9pnC_AirRZEtX2c6la-O8dq6oUEckf7daywz-pDyrNs4jcKqwQpkPYvW7HZz9stuekw" />
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-lg">Fresh Farm Eggs</h3>
+                                <p class="text-primary font-semibold mt-1">$5 per dozen</p>
+                                <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5 flex gap-2">
+                                    <a href="Cart.html"><button
+                                            class="w-full rounded bg-primary px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-primary/90 transition-colors">Add
+                                            to Cart</button></a>
+                                    <a href="Checkout.html"><button
+                                            class="w-full rounded bg-black/5 dark:bg-white/5 px-4 py-2 text-sm font-bold hover:bg-black/10 dark:hover:bg-white/10 transition-colors">Buy
+                                            Now</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative flex flex-col bg-background-light dark:bg-background-dark border border-black/10 dark:border-white/10 rounded-lg overflow-hidden transition-shadow hover:shadow-xl">
+                            <div class="aspect-square w-full overflow-hidden">
+                                <img alt="Heritage Breed Hen"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrbw1WzAhR6Uaxk1DOg4QjzzJe543j7AWWF2_QAOKipMfG8e82-RlYVWSMwrQ_PrgaK-LCOJpvhIXIMdNOPgypHTd-0v8NZ8uQL9odBo9V8ySEYoMtLr9T702Rsy1S5TZtf03UqdaggjGrzu25Qm5DK7TVJYV5f8u-sfCto7bbRTxaGr_7fIa1MW3nYIVL-hFdJtjaPhALp79rPjcm0q12P3xW8WmWZkPti95wXv24LQSiqDMz_MwBm5DesrMleZK2rRWgTJlSKxg" />
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-lg">Heritage Breed Hen</h3>
+                                <p class="text-primary font-semibold mt-1">$30</p>
+                                <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5 flex gap-2">
+                                    <a href="Cart.html"><button
+                                            class="w-full rounded bg-primary px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-primary/90 transition-colors">Add
+                                            to Cart</button></a>
+                                    <a href="Checkout.html"><button
+                                            class="w-full rounded bg-black/5 dark:bg-white/5 px-4 py-2 text-sm font-bold hover:bg-black/10 dark:hover:bg-white/10 transition-colors">Buy
+                                            Now</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative flex flex-col bg-background-light dark:bg-background-dark border border-black/10 dark:border-white/10 rounded-lg overflow-hidden transition-shadow hover:shadow-xl">
+                            <div class="aspect-square w-full overflow-hidden">
+                                <img alt="Boer Goat"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvgHSbr2UqVOxdXsZM40flDyKVaGJKCnijmtJE3RZ0-are363kagARWWaBLaijv7O-EKKogBdimQ8G-vMiztFpEMrXDBNC8ZAlBzFELYh_o9blcRtrsa_-N9HoKRhk4AgkWy0TWY1SfkIAFiBrS5ghNrMAjAC24-W0t3OabK_DZysZV5mCrAX5_CEWdY6nKMFh85jjknoOkzdkVhKtNgTiyiDPIG4Cx7tw_K2mWJl9WJYukIKckfq7X4JC8A69LoZ7dgZINO2az4I" />
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-lg">Boer Goat</h3>
+                                <p class="text-primary font-semibold mt-1">$200</p>
+                                <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5 flex gap-2">
+                                    <a href="Cart.html"><button
+                                            class="w-full rounded bg-primary px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-primary/90 transition-colors">Add
+                                            to Cart</button></a>
+                                    <a href="Checkout.html"><button
+                                            class="w-full rounded bg-black/5 dark:bg-white/5 px-4 py-2 text-sm font-bold hover:bg-black/10 dark:hover:bg-white/10 transition-colors">Buy
+                                            Now</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="group relative flex flex-col bg-background-light dark:bg-background-dark border border-black/10 dark:border-white/10 rounded-lg overflow-hidden transition-shadow hover:shadow-xl">
+                            <div class="aspect-square w-full overflow-hidden">
+                                <img alt="Organic Free-Range Eggs"
+                                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH5DXEYtcaN_wjvegVqs9XAXXRA4PbIF_3KZY9GensNEv3x9u7Fy2VkJxv6i_UcfNr8QXCMFA146LOYNvKiGwsEtHBzbdub-tgizm68Le8mQC2OesF5K9FkqnGvsB6Ko_hOwldqr-sIvTAgr55TsB-Xa9xnUeuOEveLpkCHpP-aYO4w6Nebw4jm0kA5NE1yMvCDGoP_L_dAmr-Qz75l2s5e45PqNWoasTo0w9ZfLMImE9wCbXNetcYvjgQLSdxzCJZ8wLezMbKJIE" />
+                            </div>
+                            <div class="p-4 flex flex-col flex-grow">
+                                <h3 class="font-bold text-lg">Organic Free-Range Eggs</h3>
+                                <p class="text-primary font-semibold mt-1">$6 per dozen</p>
+                                <div class="mt-4 pt-4 border-t border-black/5 dark:border-white/5 flex gap-2">
+                                    <a href="Cart.html"><button
+                                            class="w-full rounded bg-primary px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-primary/90 transition-colors">Add
+                                            to Cart</button></a>
+                                    <a href="Checkout.html"><button
+                                            class="w-full rounded bg-black/5 dark:bg-white/5 px-4 py-2 text-sm font-bold hover:bg-black/10 dark:hover:bg-white/10 transition-colors">Buy
+                                            Now</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="chatbot-shade" class="fixed inset-0 bg-black/50 hidden z-[999]" onclick="toggleChatbot()"></div>
+
+    <div id="chatbot-container"
+        class="chatbot-container w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-xl hover:bg-primary/90 z-[1000] shadow-primary/50">
+
+        <span id="chatbot-icon-closed" class="material-symbols-outlined text-3xl animate-pulse-pop">chat</span>
+
+        <div id="chatbot-window-content"
+            class="w-full h-full flex-col hidden bg-background-light dark:bg-background-dark border border-black/20 dark:border-white/20">
+
+            <div
+                class="p-4 border-b border-black/10 dark:border-white/10 flex justify-between items-center flex-shrink-0 bg-primary/10 dark:bg-primary/20 shadow-md">
+                <h3 class="font-bold text-xl text-primary flex items-center gap-2">
+                    <span class="material-symbols-outlined text-2xl">pest_control</span>Native-Bites Assistant
+                </h3>
+                <button onclick="toggleChatbot()"
+                    class="p-1 rounded-full text-black/80 dark:text-white hover:bg-red-500 hover:text-white transition-colors focus:ring-2 focus:ring-red-500 focus:outline-none">
+                    <span class="material-symbols-outlined text-xl">close</span>
+                </button>
+            </div>
+
+            <div id="chat-messages" class="p-4 flex-grow overflow-y-auto space-y-4">
+                </div>
+            <div id="analysis-status" class="hidden text-center p-2 text-xs 
+                bg-primary/10 dark:bg-primary/20 text-black/80 dark:text-white/80 
+                border-t border-primary/20 dark:border-primary/40 flex-shrink-0">
+                <span class="material-symbols-outlined text-sm align-middle mr-1 animate-pulse">cached</span>
+                <span id="analysis-text" class="align-middle">Analyzing your question...</span>
+            </div>
+
+            <div
+                class="p-3 border-t border-black/10 dark:border-white/10 flex flex-shrink-0 bg-background-light dark:bg-background-dark">
+                <input id="chat-input" type="text" placeholder="Ask a question..."
+                    class="flex-grow bg-transparent border-none p-2 focus:ring-2 focus:ring-primary focus:border-transparent focus:outline-none placeholder-black/50 dark:placeholder-white/50 text-primary dark:text-primary rounded-lg transition-all duration-200"
+                    onkeydown="if(event.key === 'Enter') sendMessage()" />
+                <button onclick="sendMessage()"
+                    class="ml-2 p-2 rounded-full text-white bg-primary hover:bg-primary/90 transition-colors flex-shrink-0">
+                    <span class="material-symbols-outlined">send</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const chatContainer = document.getElementById('chatbot-container');
+        const chatIconClosed = document.getElementById('chatbot-icon-closed');
+        const chatContent = document.getElementById('chatbot-window-content');
+        const chatShade = document.getElementById('chatbot-shade');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        
+        // Status Elements
+        const analysisStatus = document.getElementById('analysis-status');
+        const analysisText = document.getElementById('analysis-text');
+        
+        let initialGreetingSent = false;
+
+
+        // --- CHAT COMMUNICATION LOGIC ---
+
+        // Function to show the status message at the bottom, with bold text
+        function showAnalysisStatus(text) {
+            // Using strong tags for bold text inside the status bar
+            analysisText.innerHTML = `<strong>${text}</strong>`; 
+            analysisStatus.classList.remove('hidden');
+        }
+
+        // Function to hide the status message
+        function hideAnalysisStatus() {
+            analysisStatus.classList.add('hidden');
+        }
+
+        function addMessage(text, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `flex ${isUser ? 'justify-end' : 'justify-start'}`;
+
+            const bubble = document.createElement('div');
+            bubble.className = `p-3 max-w-[80%] md:max-w-xs text-sm leading-relaxed shadow-md transition-all duration-300 ${
+                isUser
+                    // USER: Primary background, corner points to bottom-left (bl-xl)
+                    ? 'bg-primary text-white rounded-t-xl rounded-bl-xl'
+                    // BOT: Light background, corner points to bottom-right (br-xl)
+                    : 'bg-black/5 dark:bg-white/5 text-black dark:text-white rounded-t-xl rounded-br-xl border border-black/10 dark:border-white/10'
+                }`;
+
+            bubble.innerHTML = text.replace(/\n/g, '<br>');
+
+            chatMessages.appendChild(messageDiv);
+            messageDiv.appendChild(bubble);
+
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message === '') return;
+
+            addMessage(message, true); // Display user message
+            chatInput.value = ''; // Clear input
+
+            // 1. Show Analysis Status
+            showAnalysisStatus("Analyzing your question..."); 
+            
+            // Wait briefly to show the "Analyzing" state
+            await new Promise(resolve => setTimeout(resolve, 500));
+
+            // 2. Change status text to "Generating"
+            showAnalysisStatus("Native-Bites is generating a response..."); 
+
+            // Simulate the backend call delay
+            try {
+                // IMPORTANT: Replace this with your actual backend API call
+                const response = await fetch('http://localhost:3000/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ prompt: message }),
+                });
+
+                const data = await response.json();
+
+                // 3. Simulate a short typing delay before response appears
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                // 4. Hide Status
+                hideAnalysisStatus(); 
+
+                if (response.ok) {
+                    addMessage(data.response, false); 
+                } else {
+                    const errorText = data.error || 'Bot replied with an unknown error.';
+                    addMessage(`❌ Bot replied with an error: ${errorText}`, false);
+                }
+            } catch (error) {
+                console.error('Fetch error:', error);
+                hideAnalysisStatus(); 
+                addMessage("❌ Error: Could not connect to the Native-Bites server. Check your backend console.", false);
+            }
+        }
+
+        // --- CHATBOT TOGGLE LOGIC ---
+
+        function toggleChatbot() {
+            const isOpen = chatContainer.classList.toggle('open');
+
+            if (isOpen) {
+                // Opening
+                chatShade.classList.remove('hidden');
+                chatIconClosed.style.display = 'none';
+                chatContent.style.display = 'flex';
+                
+                chatContainer.classList.remove('w-16', 'h-16', 'rounded-full', 'bg-primary', 'shadow-xl', 'hover:bg-primary/90', 'shadow-primary/50');
+                chatIconClosed.classList.remove('animate-pulse-pop'); 
+
+                chatInput.focus();
+                
+                // Add initial greeting only once when opening
+                if (!initialGreetingSent) {
+                    addMessage("👋 Hello! I'm Native-Bites. I can help you with product information, shipping, or any farm-related queries you have about Native Bites.", false);
+                    initialGreetingSent = true;
+                }
+                chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll after adding greeting
+
+            } else {
+                // Closing
+                chatContainer.classList.add('w-16', 'h-16', 'rounded-full', 'bg-primary', 'shadow-xl', 'hover:bg-primary/90', 'shadow-primary/50');
+                chatIconClosed.classList.add('animate-pulse-pop'); 
+
+                setTimeout(() => {
+                    chatContent.style.display = 'none';
+                    chatIconClosed.style.display = 'block';
+                    chatShade.classList.add('hidden');
+                }, 400); 
+            }
+        }
+
+        // Bind click event to the icon when closed
+        chatIconClosed.onclick = function (event) {
+            event.stopPropagation();
+            toggleChatbot();
+        };
+    </script>
+</body>
+
+</html>

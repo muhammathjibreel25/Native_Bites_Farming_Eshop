@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Native Bites - Login</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1dc91d",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112111",
+                        "text-light": "#111711",
+                        "text-dark": "#e8f0e8",
+                        "subtle-light": "#dce5dc",
+                        "subtle-dark": "#2a3c2a",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .social-btn-icon {
+            filter: invert(100%);
+        }
+
+        .dark .social-btn-icon {
+            filter: none;
+        }
+
+        .facebook-icon {
+            filter: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+    <div class="flex flex-col min-h-screen">
+        <header class="w-full px-4 sm:px-6 lg:px-8">
+            <div
+                class="container mx-auto flex items-center justify-between py-4 border-b border-subtle-light dark:border-subtle-dark">
+                <a class="flex items-center gap-2" href="#">
+                    <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"></path>
+                    </svg>
+                    <span class="text-xl font-bold">Native Bites</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="Home.html">Home</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="About.html">About</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="Contact.html">Contact</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <a class="px-4 py-2 text-sm font-bold rounded-lg bg-primary/20 hover:bg-primary/30 text-primary transition-colors"
+                        href="Register.html">Register</a>
+                    <a class="px-4 py-2 text-sm font-bold rounded-lg bg-primary text-white hover:bg-opacity-90 transition-colors"
+                        href="Login.html">Login</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+            <div class="w-full max-w-md space-y-8 bg-background-light dark:bg-background-dark/80 backdrop-blur-sm p-8 rounded-xl shadow-2xl">
+                <div>
+                    <h2 class="mt-6 text-center text-3xl font-bold tracking-tight">
+                        Welcome Back!
+                    </h2>
+                    <p class="mt-2 text-center text-sm text-text-light/70 dark:text-text-dark/70">
+                        Sign in to continue to your account.
+                    </p>
+                </div>
+                <form action="#" class="mt-8 space-y-6" method="POST">
+                    <input name="remember" type="hidden" value="true" />
+                    <div class="rounded-md shadow-sm -space-y-px">
+                        <div>
+                            <label class="sr-only" for="email-address">Email address</label>
+                            <input autocomplete="email"
+                                class="appearance-none rounded-t-lg relative block w-full px-3 py-3 border border-subtle-light dark:border-subtle-dark bg-background-light dark:bg-background-dark placeholder-text-light/50 dark:placeholder-text-dark/50 focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm"
+                                id="email-address" name="email" placeholder="Email address" required="" type="email" />
+                        </div>
+                        <div>
+                            <label class="sr-only" for="password">Password</label>
+                            <input autocomplete="current-password"
+                                class="appearance-none rounded-b-lg relative block w-full px-3 py-3 border border-subtle-light dark:border-subtle-dark bg-background-light dark:bg-background-dark placeholder-text-light/50 dark:placeholder-text-dark/50 focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm"
+                                id="password" name="password" placeholder="Password" required="" type="password" />
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input
+                                class="h-4 w-4 text-primary bg-background-light dark:bg-background-dark border-subtle-light dark:border-subtle-dark focus:ring-primary rounded"
+                                id="remember-me" name="remember-me" type="checkbox" />
+                            <label class="ml-2 block text-sm" for="remember-me">
+                                Remember me
+                            </label>
+                        </div>
+                        <div class="text-sm">
+                            <a class="font-medium text-primary hover:text-primary/80" href="#">
+                                Forgot your password?
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="Shop.html"
+                            class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-bold rounded-lg text-white bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-background-light dark:focus:ring-offset-background-dark">
+                            Sign in
+                        </a>
+                    </div>
+                </form>
+
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-subtle-light dark:border-subtle-dark"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-background-light dark:bg-background-dark/80 text-text-light/70 dark:text-text-dark/70">
+                            Or continue with
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="mt-6 grid grid-cols-2 gap-3">
+                        <a class="w-full inline-flex items-center justify-center py-3 px-4 border border-subtle-light dark:border-subtle-dark rounded-lg shadow-sm bg-background-light dark:bg-subtle-dark text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors"
+                            href="https://accounts.google.com/signin" target="_blank">
+                            <img alt="Google logo" class="w-5 h-5 mr-2 social-btn-icon"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSKIUuWSa7gDAJuzWGeZUFoE1E1VhjBmV_WNVWp5Ctc960JAFuoQiIe2sD6D8qG9VtuW5qHY21mEijW3x-bklfgixRaBCODYdvLd_yWIu4opwx1pChlIOLxsADFLfLrFM8e1UvEqtmE2pAAw2ZpOld5q4CN0f3AEwymNwquIlnQ4aUuYYMlxRR4o73LmXkzsN7hsoIvo2rfEfuFKkChU2Qd33Q7NCrWMjOpMp-Vs9uMcYfdVSRW0twVbXHn1kxMv1N-3wzL9F9bDE" />
+                            <span>Google</span>
+                        </a>
+                        <a class="w-full inline-flex items-center justify-center py-3 px-4 border border-subtle-light dark:border-subtle-dark rounded-lg shadow-sm bg-background-light dark:bg-subtle-dark text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors"
+                            href="https://github.com/login/oauth/authorize" target="_blank">
+                            <img alt="GitHub logo" class="w-5 h-5 mr-2 social-btn-icon"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZkH0wHo-9NGyg1oSfeEnFs4HoQRQ1klf7H4Fkhh1Z8H-wR01FQTd_xsia8qsyr2kRt1KFQKprvIh0UB_T-qPUki7drgaeHLGFYbyZeJJNel-WtF1qinFwwf7RUvwvd3Rdg3Kxd6tP-AFAJwimOb8nvwNe1aZ8wyPnyQnvbZpWecn2SvU9u845w69r5yrLAhaBvk_oNRFc9pnC_AirRZEtX2c6la-O8dq6oUEckf7daywz-pDyrNs4jcKqwQpkPYvW7HZz9stuekw2" />
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <p class="mt-8 text-center text-sm text-text-light/70 dark:text-text-dark/70">
+                    Don't have an account?
+                    <a class="font-medium text-primary hover:text-primary/80" href="Register.html">
+                        Sign up
+                    </a>
+                </p>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

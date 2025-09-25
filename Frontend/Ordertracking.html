@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Native Bites - Order Tracking</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#1dc91d",
+            "background-light": "#f6f8f6",
+            "background-dark": "#112111",
+          },
+          fontFamily: {
+            "display": ["Public Sans"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+  <div class="flex flex-col min-h-screen">
+    <header
+      class="bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm sticky top-0 z-10 border-b border-black/10 dark:border-white/10">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center gap-4">
+            <div class="w-8 h-8 text-primary">
+              <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+              </svg>
+            </div>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white">Native Bites</h2>
+          </div>
+          <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <a class="text-gray-600 dark:text-gray-300 hover:text-primary" href="Shop.html">Shop</a>
+            <a class="text-gray-600 dark:text-gray-300 hover:text-primary" href="About.html">Our Kutty Story</a>
+            <a class="text-gray-600 dark:text-gray-300 hover:text-primary" href="#">Recipes</a>
+            <a class="text-gray-600 dark:text-gray-300 hover:text-primary" href="Contact.html">Contact</a>
+          </nav>
+          <div class="flex items-center gap-2">
+            <button
+              class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20">
+              <span class="material-symbols-outlined">search</span>
+            </button>
+            <a href="Cart.html"><button
+                class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20">
+                <span class="material-symbols-outlined">shopping_cart</span>
+              </button></a>
+            <div class="ml-2">
+              <a href="Myaccount.html"><img alt="User Avatar" class="w-10 h-10 rounded-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy0ADLhSJXyF3CnyUM9Aa6_MDlKf0oMrItFsVhAQMpeHagMF83-SSZaj3jShruIWyKr0eobUiDjeKxuCuDv9hhQRmEpFINQAA5xyoTwYTcj54YgWjallhDHbFMHiYqD99YguvqA1P0YdKpXmRB1XtaobRe--BPfdLdii01sRA7hjgkQTX8igqTTka_yfnYcKCBuZp9St8ntD0RgwvNhnzeTtw7moXE_AmYxSPdObmFHHyhbeL5od2EFmu4exJ5PHmBldhhrkNSH_o" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-8">Track Your Order</h1>
+        <div
+          class="bg-white dark:bg-gray-800/50 p-6 rounded-xl shadow-sm mb-12 border border-black/5 dark:border-white/5">
+          <p class="text-gray-600 dark:text-gray-400 mb-4">Enter your order number below to check its status.</p>
+          <div class="flex items-center gap-4">
+            <input
+              class="flex-grow form-input w-full rounded-lg border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary h-12 text-base"
+              placeholder="e.g., #12345-ABC" type="text" />
+            <button class="bg-primary text-white h-12 px-6 rounded-lg font-bold hover:opacity-90 transition-opacity">
+              Track
+            </button>
+          </div>
+        </div>
+        <div class="space-y-8">
+          <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Recent Orders</h2>
+          <div
+            class="bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-sm border border-black/5 dark:border-white/5">
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                <div class="md:col-span-2">
+                  <div class="mb-4">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Order #12345</p>
+                    <p class="text-xl font-bold text-gray-800 dark:text-gray-100">Delivered</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Delivered on July 15, 2024</p>
+                  </div>
+                  <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                    <div class="bg-primary h-2.5 rounded-full" style="width: 100%"></div>
+                  </div>
+                  <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
+                    <span>Processing</span>
+                    <span>Shipped</span>
+                    <span>Delivered</span>
+                  </div>
+                  <button
+                    class="mt-6 bg-primary/10 dark:bg-primary/20 text-primary font-bold py-2 px-4 rounded-lg hover:bg-primary/20 dark:hover:bg-primary/30 text-sm">
+                    View Details
+                  </button>
+                </div>
+                <div class="w-full aspect-square rounded-lg bg-cover bg-center"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCK5pfkRxfG5eesbxCEvBNZ9mxhEBYkubUYmNJ8jQRrhD8dXwrFEH92CfBebMx1EV0Xzx3bXMw4dSzD9Au8HLDsYQxTc-9Cz53EvxSF5ffEeSx4cXu8qdnrO14sjtXv9dg0IhoyEoWdTdkgTk6HCX9KJip1S9G2pAt9y5cWqZBB5F4v5NtYmQ4-ABDkJ8vZxBLo7vB0pgbYBqbsFYe3fSzw67U1dO-TwWa7XwThTSBD4ZLX19neIRPkJ9ewKNakXpw5MjnEM2UkFxw");'>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-sm border border-black/5 dark:border-white/5">
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                <div class="md:col-span-2">
+                  <div class="mb-4">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Order #67890</p>
+                    <p class="text-xl font-bold text-gray-800 dark:text-gray-100">Shipped</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Estimated delivery: July 20, 2024</p>
+                  </div>
+                  <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                    <div class="bg-primary h-2.5 rounded-full" style="width: 66%"></div>
+                  </div>
+                  <div class="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
+                    <span>Processing</span>
+                    <span>Shipped</span>
+                    <span>Delivered</span>
+                  </div>
+                  <button
+                    class="mt-6 bg-primary/10 dark:bg-primary/20 text-primary font-bold py-2 px-4 rounded-lg hover:bg-primary/20 dark:hover:bg-primary/30 text-sm">
+                    View Details
+                  </button>
+                </div>
+                <div class="w-full aspect-square rounded-lg bg-cover bg-center"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAjrYHX1gndo78wl7QDT7bgCzBSrmZBFjIGoEycKHWCpFyBSlvpqgcreB5QyVfjzceIktFiPk1c-dX1L0tVq_lynbzK5EjMz9JddDQHpkWOFmBuIh-Xm5BPM8d6W5zJR5AXRHPQLlkShNyDs2SXP_5CONlqYo_hdlEjBIDtuWyNMef5aXfMFdhmiOfeejgxIBXlI-HEQB8afXCNcnhxzRVmEtq6wUbqdpPl43-SwR-Z7G3ZI4ICtq2JoZzAXRz0Q2Z7JJ8K0D2TMz8");'>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-background-light dark:bg-background-dark border-t border-black/10 dark:border-white/10 mt-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-gray-500 dark:text-gray-400">
+        <h3 class="text-lg font-bold">Developed by Muhammath Jibreel</h3>
+        <p>© 2024 Native Bites. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+</html>

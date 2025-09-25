@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Public+Sans:wght@400;500;700;900"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1dc91d",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112111",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-background-dark dark:text-background-light">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-primary/20 dark:border-primary/30 px-10 py-3">
+                <div class="flex items-center gap-4">
+                    <svg class="text-primary size-6" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+                    </svg>
+                    <h2 class="text-lg font-bold tracking-tight">Native Bites</h2>
+                </div>
+                <div class="hidden md:flex flex-1 justify-end gap-8">
+                    <nav class="flex items-center gap-9">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="Login.html">Shop</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="About.html">Our Kutty Story</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="Contact.html">Contact</a>
+                    </nav>
+                </div>
+            </header>
+            <main class="flex-1 px-4 py-12 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-4xl">
+                    <div class="mb-12 text-center">
+                        <h1
+                            class="text-4xl font-extrabold tracking-tighter sm:text-5xl lg:text-6xl text-background-dark dark:text-background-light">
+                            Privacy Policy</h1>
+                        <p class="mt-4 text-lg text-background-dark/70 dark:text-background-light/70">Last updated: July
+                            26, 2024</p>
+                    </div>
+                    <div class="space-y-10">
+                        <section>
+                            <h2 class="text-2xl font-bold border-b border-primary/20 dark:border-primary/30 pb-3 mb-4">
+                                Data Collection</h2>
+                            <p class="text-base leading-relaxed text-background-dark/80 dark:text-background-light/80">
+                                We collect information you provide directly to us, such as when you create an account,
+                                place an order, or contact us. This may include your name, email address, phone number,
+                                shipping address, and payment information.</p>
+                        </section>
+                        <section>
+                            <h2 class="text-2xl font-bold border-b border-primary/20 dark:border-primary/30 pb-3 mb-4">
+                                Data Usage</h2>
+                            <p class="text-base leading-relaxed text-background-dark/80 dark:text-background-light/80">
+                                We use your information to process orders, provide customer support, and improve our
+                                services. We may also use your data for marketing purposes, such as sending newsletters
+                                or promotional offers, but only with your consent.</p>
+                        </section>
+                        <section>
+                            <h2 class="text-2xl font-bold border-b border-primary/20 dark:border-primary/30 pb-3 mb-4">
+                                Data Security</h2>
+                            <p class="text-base leading-relaxed text-background-dark/80 dark:text-background-light/80">
+                                We implement security measures to protect your personal information from unauthorized
+                                access, alteration, disclosure, or destruction. These measures include encryption,
+                                access controls, and regular security assessments.</p>
+                        </section>
+                        <section>
+                            <h2 class="text-2xl font-bold border-b border-primary/20 dark:border-primary/30 pb-3 mb-4">
+                                User Rights</h2>
+                            <p class="text-base leading-relaxed text-background-dark/80 dark:text-background-light/80">
+                                You have the right to access, correct, or delete your personal information. You can also
+                                object to the processing of your data or request data portability. To exercise these
+                                rights, please contact us at the provided contact information.</p>
+                        </section>
+                        <section>
+                            <h2 class="text-2xl font-bold border-b border-primary/20 dark:border-primary/30 pb-3 mb-4">
+                                Cookies</h2>
+                            <p class="text-base leading-relaxed text-background-dark/80 dark:text-background-light/80">
+                                We use cookies to enhance your browsing experience and personalize content. You can
+                                manage your cookie preferences through your browser settings.</p>
+                        </section>
+                        <section>
+                            <h2 class="text-2xl font-bold border-b border-primary/20 dark:border-primary/30 pb-3 mb-4">
+                                Changes to This Policy</h2>
+                            <p class="text-base leading-relaxed text-background-dark/80 dark:text-background-light/80">
+                                We may update this privacy policy from time to time. We will notify you of any
+                                significant changes by posting the new policy on our website or through other
+                                communication channels.</p>
+                        </section>
+                        <section>
+                            <h2 class="text-2xl font-bold border-b border-primary/20 dark:border-primary/30 pb-3 mb-4">
+                                Contact Us</h2>
+                            <p class="text-base leading-relaxed text-background-dark/80 dark:text-background-light/80">
+                                If you have any questions or concerns about this privacy policy, please contact us at <a
+                                    class="text-primary hover:underline"
+                                    href="mailto:support@Native Bites.com">support@Native Bites.com</a> or call us at
+                                (555) 123-4567.</p>
+                        </section>
+                    </div>
+                </div>
+            </main>
+            <footer class="border-t border-primary/20 dark:border-primary/30">
+                <div class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+                    <div class="flex justify-center space-x-6">
+                        <a class="text-background-dark/60 dark:text-background-light/60 hover:text-primary transition-colors"
+                            href="#">
+                            <span class="sr-only">Twitter</span>
+                            <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M22.46 6.54a8.21 8.21 0 01-2.36.65 4.14 4.14 0 001.81-2.27 8.22 8.22 0 01-2.61 1 4.1 4.1 0 00-7 3.74 11.64 11.64 0 01-8.45-4.29 4.1 4.1 0 001.27 5.48 4.09 4.09 0 01-1.86-.51v.05a4.1 4.1 0 003.3 4.02 4.1 4.1 0 01-1.85.07 4.1 4.1 0 003.83 2.85A8.23 8.23 0 012 18.23a11.58 11.58 0 006.29 1.84c7.55 0 11.67-6.25 11.67-11.67v-.53a8.34 8.34 0 002.05-2.12z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a class="text-background-dark/60 dark:text-background-light/60 hover:text-primary transition-colors"
+                            href="#">
+                            <span class="sr-only">Instagram</span>
+                            <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path clip-rule="evenodd"
+                                    d="M12.315 2c2.43 0 2.718.01 3.655.054a5.92 5.92 0 014.28 1.637 5.92 5.92 0 011.637 4.28c.044.937.054 1.225.054 3.655s-.01 2.718-.054 3.655a5.92 5.92 0 01-1.637 4.28 5.92 5.92 0 01-4.28 1.637c-.937.044-1.225.054-3.655.054s-2.718-.01-3.655-.054a5.92 5.92 0 01-4.28-1.637 5.92 5.92 0 01-1.637-4.28c-.044-.937-.054-1.225-.054-3.655s.01-2.718.054-3.655a5.92 5.92 0 011.637-4.28 5.92 5.92 0 014.28-1.637C9.597 2.01 9.885 2 12.315 2zM12 7.045a4.955 4.955 0 100 9.91 4.955 4.955 0 000-9.91zm0 8.162a3.207 3.207 0 110-6.414 3.207 3.207 0 010 6.414zM16.85 7.15a1.23 1.23 0 100-2.46 1.23 1.23 0 000 2.46z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a class="text-background-dark/60 dark:text-background-light/60 hover:text-primary transition-colors"
+                            href="#">
+                            <span class="sr-only">Facebook</span>
+                            <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path clip-rule="evenodd"
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                    fill-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <nav aria-label="Footer" class="mt-10 -mb-2 flex flex-wrap justify-center">
+                        <div class="px-5 py-2">
+                            <a class="text-sm leading-6 text-background-dark/80 dark:text-background-light/80 hover:text-primary transition-colors"
+                                href="Terms.html">Terms of Service</a>
+                        </div>
+                        <div class="px-5 py-2">
+                            <a class="text-sm leading-6 text-background-dark/80 dark:text-background-light/80 hover:text-primary transition-colors"
+                                href="Contact.html">Contact Us</a>
+                        </div>
+                    </nav>
+                    <p class="mt-10 text-center text-xs leading-5 text-background-dark/60 dark:text-background-light/60">Developed by Muhammath Jibreel</p>
+                    <p
+                        class="mt-10 text-center text-xs leading-5 text-background-dark/60 dark:text-background-light/60">
+                        © 2024 Native Bites. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>

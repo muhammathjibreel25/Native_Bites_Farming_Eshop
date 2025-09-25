@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Farm Checkout - Review</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Public+Sans:wght@400;500;700;900"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1dc91d",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112111",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2e1a",
+                        "text-light": "#0b120b",
+                        "text-dark": "#e8f5e8",
+                        "subtle-light": "#648764",
+                        "subtle-dark": "#a0c7a0",
+                        "border-light": "#e1e6e1",
+                        "border-dark": "#324932",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+        }
+
+        .text-primary-contrast-light {
+            color: #0b120b;
+        }
+
+        .text-primary-contrast-dark {
+            color: #e8f5e8;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+    <div class="flex flex-col min-h-screen">
+        <header class="border-b border-border-light dark:border-border-dark px-4 lg:px-10 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <svg class="text-primary" fill="none" height="24" viewBox="0 0 24 24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 2H15.3333V8.66667H8.66667V15.3333H2V22H22V2Z" fill="currentColor"></path>
+                    </svg>
+                    <h2 class="text-lg font-bold">Native Bites</h2>
+                </div>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium hover:text-primary" href="Shop.html">Shop</a>
+                    <a class="text-sm font-medium hover:text-primary" href="About.html">Our Kutty Story</a>
+                    <a class="text-sm font-medium hover:text-primary" href="#">Recipes</a>
+                    <a class="text-sm font-medium hover:text-primary" href="Contact.html">Contact</a>
+                </nav>
+                <div class="flex items-center gap-2">
+                    <button
+                        class="flex items-center justify-center size-10 rounded-full bg-primary/10 dark:bg-primary/20 text-text-light dark:text-text-dark hover:bg-primary/20 dark:hover:bg-primary/30">
+                        <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+                            </path>
+                        </svg>
+                    </button>
+                    <a href="Cart.html"><button
+                            class="flex items-center justify-center size-10 rounded-full bg-primary/10 dark:bg-primary/20 text-text-light dark:text-text-dark hover:bg-primary/20 dark:hover:bg-primary/30">
+                            <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z">
+                                </path>
+                            </svg>
+                        </button></a>
+                    <a href="Myaccount.html"><img alt="User avatar" class="size-10 rounded-full"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCi3f-jEW_AIVVmCJ4CKic4EZC6wC881Uzq5NoArQFBzLOLPB29MhZX69QetjhsERpaQIFCKG5uWFPvqV8Sh87m6PJtQiMRbXfdGrPeo1yANL_jmrSgOdyJxB8QDnA3xUh61aET4ufQHk6wsSIUC73_WKO3pv7yrx9g1Yt1V2o1dphbpRM_ecVGK5WqQgHpIfrcff7FFNWM-PK01pOAwoGoGvF9X-x65VWpEW02VXgyLJKrNYAs-q6zWspQwcX-9kMoHhezx97sMg" /></a>
+                </div>
+            </div>
+        </header>
+        <main class="flex-1 w-full max-w-6xl mx-auto py-12 px-4">
+            <div class="mb-10">
+                <nav aria-label="Progress">
+                    <ol class="flex items-center justify-center" role="list">
+                        <li class="relative pr-8 sm:pr-24">
+                            <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                                <div class="h-0.5 w-full bg-primary"></div>
+                            </div>
+                            <a class="relative flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-contrast-dark"
+                                href="#">
+                                <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path clip-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                                        fill-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <div class="absolute -bottom-8 w-full text-center">
+                                <span
+                                    class="text-sm text-subtle-light dark:text-subtle-dark font-medium">Shipping</span>
+                            </div>
+                        </li>
+                        <li class="relative pr-8 sm:pr-24">
+                            <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                                <div class="h-0.5 w-full bg-primary"></div>
+                            </div>
+                            <a class="relative flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-contrast-dark"
+                                href="#">
+                                <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path clip-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                                        fill-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <div class="absolute -bottom-8 w-full text-center">
+                                <span class="text-sm text-subtle-light dark:text-subtle-dark font-medium">Payment</span>
+                            </div>
+                        </li>
+                        <li class="relative pr-8 sm:pr-24">
+                            <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                                <div class="h-0.5 w-full bg-border-light dark:bg-border-dark"></div>
+                            </div>
+                            <a aria-current="step"
+                                class="relative flex h-9 w-9 items-center justify-center rounded-full border-2 border-primary bg-surface-light dark:bg-surface-dark"
+                                href="#">
+                                <span aria-hidden="true" class="h-3 w-3 rounded-full bg-primary"></span>
+                            </a>
+                            <div class="absolute -bottom-8 w-full text-center">
+                                <span class="text-sm text-primary font-bold">Review</span>
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <div aria-hidden="true" class="absolute inset-0 flex items-center">
+                            </div>
+                            <a class="group relative flex h-9 w-9 items-center justify-center rounded-full border-2 border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark hover:border-subtle-light dark:hover:border-subtle-dark"
+                                href="#">
+                                <span aria-hidden="true"
+                                    class="h-3 w-3 rounded-full bg-transparent group-hover:bg-subtle-light dark:group-hover:bg-subtle-dark"></span>
+                            </a>
+                            <div class="absolute -bottom-8 w-full text-center">
+                                <span
+                                    class="text-sm text-subtle-light dark:text-subtle-dark font-medium">Confirmation</span>
+                            </div>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="pt-10 text-center mb-8">
+                <h1 class="text-4xl font-extrabold tracking-tight text-text-light dark:text-text-dark">Review Your Order
+                </h1>
+                <p class="mt-2 text-lg text-subtle-light dark:text-subtle-dark">Please check your order details below
+                    before placing your order.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-2 space-y-8">
+                    <div
+                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-light dark:border-border-dark">
+                        <h2 class="text-2xl font-bold mb-4">Order Summary</h2>
+                        <div class="divide-y divide-border-light dark:divide-border-dark">
+                            <div class="flex items-center gap-6 py-4">
+                                <img alt="Organic Brown Eggs" class="size-20 rounded-lg object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuALfomk66hv8dtU5unh20hWqLpHKMclgBH0IUEwXcONK0-cMYfvJEthAsPlThndvMMmKr_B1HaKZ6Q7IuJwSAMAm8WZB-JpCReuLM491iEu6pbS8xE27f0qDOVEnAT94_4QuhLf8RKt30g3l_eRE2crhQeNoGMCL0i_cQvrSLF72E1PwO-NUolnejKqIWaBUZKdl3IqCvByVXcutjGxJIQgFNv5GFcqmGkbPowVuigIou43-wM9qHj0KPSBN3eGHo1jkB6vaTAxvbo" />
+                                <div class="flex-1">
+                                    <p class="font-semibold text-lg">Organic Brown Eggs</p>
+                                    <p class="text-sm text-subtle-light dark:text-subtle-dark">Quantity: 2</p>
+                                </div>
+                                <p class="font-semibold text-lg">$12.00</p>
+                            </div>
+                            <div class="flex items-center gap-6 py-4">
+                                <img alt="Free-Range Chicken" class="size-20 rounded-lg object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwwQe_avg6q1ZfOZyDv6VnR7cjFr62eneN98mpqzC3LsIq90mGs74Trgf6NL3m5HfH2_NxtXPBcPRj4K7DsCt-d76VrKsgyiZHGFUeCZvFcXrF4n9_HNOCPpNzm-Ttnc-3h8Moh1XhUQoMPuGcUNP95qwqCu-lX5p2-uf1dospTW3_JIkNDj0k68xHsp10YwcZtV3UJa2JH5fqwaW8ooVpn1MssA2wdbvfo318J82cB-l2hBOD7bOXfHD1oeBV4BRCH0_xi7ywojE" />
+                                <div class="flex-1">
+                                    <p class="font-semibold text-lg">Free-Range Chicken</p>
+                                    <p class="text-sm text-subtle-light dark:text-subtle-dark">Quantity: 1</p>
+                                </div>
+                                <p class="font-semibold text-lg">$15.00</p>
+                            </div>
+                            <div class="flex items-center gap-6 py-4">
+                                <img alt="Goat Milk Cheese" class="size-20 rounded-lg object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbf1KWx66XJp6XmPtnkbQBo6KRjGU3gs6q-CuLXD0G5QM_KOEnx4H0bI5JMdX2mStndTqaKIh_Irs8bynaDdoy6SvbS7DzzSX3qGUqhgIb1R6ESxG5O6TOEN8IxsdmMY53OEc_8LeYlTqOF1u2uHbD93cJ6Emu21r9EVO_YOWepvuStNF9P7GM4js-VQ_1IvyqS98Jtul8MHUe5N6j2I1gIm2_cNHqC3F-FwodgCAwpDzxh495kipUXeA4HyUh5QEcJGoVZcbWuno" />
+                                <div class="flex-1">
+                                    <p class="font-semibold text-lg">Goat Milk Cheese</p>
+                                    <p class="text-sm text-subtle-light dark:text-subtle-dark">Quantity: 1</p>
+                                </div>
+                                <p class="font-semibold text-lg">$8.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-light dark:border-border-dark">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-2xl font-bold">Shipping Details</h2>
+                            <a class="text-sm font-medium text-primary hover:underline" href="Checkout.html">Edit</a>
+                        </div>
+                        <div class="text-subtle-light dark:text-subtle-dark space-y-2">
+                            <p>Jane Doe</p>
+                            <p>123 Farmhouse Lane, Greenfield, GA 12345</p>
+                            <p>Standard Shipping (3-5 business days) - $5.00</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-light dark:border-border-dark">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-2xl font-bold">Payment Method</h2>
+                            <a class="text-sm font-medium text-primary hover:underline" href="Payment.html">Edit</a>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <svg class="h-8 w-8 text-subtle-light dark:text-subtle-dark" fill="none"
+                                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect height="18" rx="2" ry="2" width="22" x="1" y="3"></rect>
+                                <line x1="1" x2="23" y1="9" y2="9"></line>
+                            </svg>
+                            <p class="text-subtle-light dark:text-subtle-dark">Visa ending in 1234</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-1">
+                    <div
+                        class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-border-light dark:border-border-dark sticky top-12">
+                        <h2 class="text-2xl font-bold mb-6">Total Cost</h2>
+                        <div class="space-y-3 text-lg">
+                            <div class="flex justify-between">
+                                <p class="text-subtle-light dark:text-subtle-dark">Subtotal</p>
+                                <p class="font-medium">$35.00</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <p class="text-subtle-light dark:text-subtle-dark">Shipping</p>
+                                <p class="font-medium">$5.00</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <p class="text-subtle-light dark:text-subtle-dark">Taxes</p>
+                                <p class="font-medium">$2.80</p>
+                            </div>
+                            <div class="border-t border-border-light dark:border-border-dark my-4"></div>
+                            <div class="flex justify-between font-bold text-2xl">
+                                <p>Total</p>
+                                <p>$42.80</p>
+                            </div>
+                        </div>
+                        <a href="Orderconfirm.html"><button
+                                class="mt-8 w-full bg-primary text-primary-contrast-dark py-4 px-6 rounded-lg font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+                                Place Order
+                            </button></a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="w-full max-w-6xl mx-auto py-8 px-4 text-center text-sm text-subtle-light dark:text-subtle-dark">
+            <p class="text-lg font-bold">Developed by Muhammath Jibreel</p>
+            <p>© 2024 Native Bites. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

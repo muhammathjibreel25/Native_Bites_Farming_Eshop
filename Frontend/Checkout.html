@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
+        onload="this.rel='stylesheet'" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>Native Bites - Shipping</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1dc91d",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#112111",
+                    },
+                    fontFamily: {
+                        display: ["Public Sans"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-zinc-900 dark:text-zinc-100">
+    <div class="flex min-h-screen w-full flex-col">
+        <header
+            class="sticky top-0 z-10 flex h-16 items-center justify-between border-b border-zinc-200/50 dark:border-zinc-800/50 bg-background-light/80 dark:bg-background-dark/80 px-4 backdrop-blur-sm sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3">
+                <svg class="h-6 w-6 text-zinc-900 dark:text-zinc-100" fill="none" viewBox="0 0 48 48"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+                </svg>
+                <h2 class="text-lg font-bold"></h2>
+            </div>
+            <nav class="hidden items-center gap-6 text-sm font-medium lg:flex">
+                <a class="transition-colors hover:text-primary" href="Shop.html">Shop</a>
+                <a class="transition-colors hover:text-primary" href="About.html">Our Kutty Story</a>
+                <a class="transition-colors hover:text-primary" href="#">Recipes</a>
+                <a class="transition-colors hover:text-primary" href="Contact.html">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="Cart.html"><button
+                        class="flex items-center gap-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 px-4 py-2 text-sm font-medium transition-colors hover:bg-zinc-200 dark:hover:bg-zinc-700">
+                        <span class="material-symbols-outlined text-lg"> shopping_cart </span>
+                        <span>Cart (3)</span>
+                    </button></a>
+                <button class="lg:hidden">
+                    <span class="material-symbols-outlined text-2xl"> menu </span>
+                </button>
+            </div>
+        </header>
+        <main class="flex-1">
+            <div class="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <div class="flex items-center">
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-zinc-900">
+                                <span class="material-symbols-outlined"> local_shipping </span>
+                            </div>
+                            <p class="mt-2 text-sm font-bold text-primary">Shipping</p>
+                        </div>
+                        <div class="flex-1">
+                            <div class="h-1 bg-zinc-200 dark:bg-zinc-700"></div>
+                        </div>
+                        <div class="flex flex-col items-center text-zinc-500 dark:text-zinc-400">
+                            <div
+                                class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-zinc-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark">
+                                <span class="material-symbols-outlined"> payment </span>
+                            </div>
+                            <p class="mt-2 text-sm font-medium">Payment</p>
+                        </div>
+                        <div class="flex-1">
+                            <div class="h-1 bg-zinc-200 dark:bg-zinc-700"></div>
+                        </div>
+                        <div class="flex flex-col items-center text-zinc-500 dark:text-zinc-400">
+                            <div
+                                class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-zinc-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark">
+                                <span class="material-symbols-outlined"> rate_review </span>
+                            </div>
+                            <p class="mt-2 text-sm font-medium">Review</p>
+                        </div>
+                        <div class="flex-1">
+                            <div class="h-1 bg-zinc-200 dark:bg-zinc-700"></div>
+                        </div>
+                        <div class="flex flex-col items-center text-zinc-500 dark:text-zinc-400">
+                            <div
+                                class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-zinc-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark">
+                                <span class="material-symbols-outlined"> check_circle </span>
+                            </div>
+                            <p class="mt-2 text-sm font-medium">Confirmation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
+                    <div class="space-y-6">
+                        <h1 class="text-3xl font-bold tracking-tight">Shipping Information</h1>
+                        <form class="space-y-4">
+                            <div class="space-y-1">
+                                <label class="text-sm font-medium" for="name">Full Name</label>
+                                <input
+                                    class="block w-full rounded-lg border-zinc-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary"
+                                    id="name" placeholder="Enter your full name" type="text" />
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-sm font-medium" for="address">Address</label>
+                                <input
+                                    class="block w-full rounded-lg border-zinc-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary"
+                                    id="address" placeholder="Enter your address" type="text" />
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-sm font-medium" for="city">City</label>
+                                <input
+                                    class="block w-full rounded-lg border-zinc-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary"
+                                    id="city" placeholder="Enter your city" type="text" />
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="space-y-1">
+                                    <label class="text-sm font-medium" for="state">State/Province</label>
+                                    <select
+                                        class="block w-full rounded-lg border-zinc-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary"
+                                        id="state">
+                                        <option>Select...</option>
+                                        <option>California</option>
+                                        <option>New York</option>
+                                        <option>Texas</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-1">
+                                    <label class="text-sm font-medium" for="zip">Zip/Postal Code</label>
+                                    <input
+                                        class="block w-full rounded-lg border-zinc-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary"
+                                        id="zip" placeholder="Enter zip" type="text" />
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-sm font-medium" for="phone">Phone Number</label>
+                                <input
+                                    class="block w-full rounded-lg border-zinc-300 dark:border-zinc-700 bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary"
+                                    id="phone" placeholder="Enter your phone number" type="tel" />
+                            </div>
+                        </form>
+                    </div>
+                    <div class="space-y-6">
+                        <h2 class="text-2xl font-bold">Shipping Method</h2>
+                        <div class="space-y-3">
+                            <label
+                                class="flex cursor-pointer items-center justify-between rounded-lg border border-zinc-300 dark:border-zinc-700 p-4 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary">
+                                <div>
+                                    <p class="font-medium">Standard Shipping</p>
+                                    <p class="text-sm text-zinc-500 dark:text-zinc-400">Arrives in 5-7 business days</p>
+                                </div>
+                                <p class="font-medium">$5.00</p>
+                                <input checked="" class="sr-only" name="shipping" type="radio" />
+                            </label>
+                            <label
+                                class="flex cursor-pointer items-center justify-between rounded-lg border border-zinc-300 dark:border-zinc-700 p-4 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary">
+                                <div>
+                                    <p class="font-medium">Express Shipping</p>
+                                    <p class="text-sm text-zinc-500 dark:text-zinc-400">Arrives in 2-3 business days</p>
+                                </div>
+                                <p class="font-medium">$15.00</p>
+                                <input class="sr-only" name="shipping" type="radio" />
+                            </label>
+                            <label
+                                class="flex cursor-pointer items-center justify-between rounded-lg border border-zinc-300 dark:border-zinc-700 p-4 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary">
+                                <div>
+                                    <p class="font-medium">Farm Pickup</p>
+                                    <p class="text-sm text-zinc-500 dark:text-zinc-400">Ready in 24 hours</p>
+                                </div>
+                                <p class="font-medium">Free</p>
+                                <input class="sr-only" name="shipping" type="radio" />
+                            </label>
+                        </div>
+                        <a href="Payment.html"><button
+                                class="w-full rounded-lg bg-primary py-3 font-bold text-zinc-900 transition-opacity hover:opacity-90">Continue
+                                to Payment</button></a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

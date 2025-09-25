@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Native Bites - Goat</title>
+  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+  <link as="style"
+    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
+    onload="this.rel='stylesheet'" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1dc91d",
+            "background-light": "#f6f8f6",
+            "background-dark": "#112111",
+          },
+          fontFamily: {
+            display: ["Public Sans"],
+          },
+          borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+        },
+      },
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+    <header
+      class="sticky top-0 z-10 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-8">
+          <a class="flex items-center gap-3 text-slate-900 dark:text-white" href="#">
+            <svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+            </svg>
+            <h2 class="text-lg font-bold">Native Bites</h2>
+          </a>
+          <nav class="hidden items-center gap-8 md:flex">
+            <a class="text-sm font-medium hover:text-primary" href="Hens.html">Hens</a>
+            <a class="text-sm font-medium hover:text-primary" href="Eggs.html">Eggs</a>
+            <a class="text-sm font-medium hover:text-primary" href="Shop.html">Other Products</a>
+          </nav>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="relative hidden sm:block">
+            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"> search
+            </span>
+            <input
+              class="form-input w-full rounded-full border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark py-2 pl-10 pr-4 text-sm focus:border-primary focus:ring-primary"
+              placeholder="Search" value="" />
+          </div>
+          <a href="Cart.html"><button
+              class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-200/50 dark:bg-slate-800/50 text-slate-800 dark:text-slate-200 hover:bg-primary/20">
+              <span class="material-symbols-outlined"> shopping_cart </span>
+            </button></a>
+        </div>
+      </div>
+    </header>
+    <main class="flex-1">
+      <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-8 md:flex-row">
+          <aside class="w-full md:w-64">
+            <div class="space-y-6">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Filters</h3>
+              <div class="space-y-4">
+                <h4 class="font-semibold text-slate-800 dark:text-slate-200">Breed</h4>
+                <div class="space-y-2">
+                  <label class="flex items-center gap-2">
+                    <input class="form-checkbox rounded text-primary focus:ring-primary" type="checkbox" />
+                    <span>Alpine</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input class="form-checkbox rounded text-primary focus:ring-primary" type="checkbox" />
+                    <span>Nubian</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input class="form-checkbox rounded text-primary focus:ring-primary" type="checkbox" />
+                    <span>Saanen</span>
+                  </label>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <h4 class="font-semibold text-slate-800 dark:text-slate-200">Age</h4>
+                <div class="space-y-2">
+                  <label class="flex items-center gap-2">
+                    <input class="form-checkbox rounded text-primary focus:ring-primary" type="checkbox" />
+                    <span>Under 1 year</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input class="form-checkbox rounded text-primary focus:ring-primary" type="checkbox" />
+                    <span>1-3 years</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input class="form-checkbox rounded text-primary focus:ring-primary" type="checkbox" />
+                    <span>Over 3 years</span>
+                  </label>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <h4 class="font-semibold text-slate-800 dark:text-slate-200">Purpose</h4>
+                <div class="space-y-2">
+                  <label class="flex items-center gap-2">
+                    <input class="form-checkbox rounded text-primary focus:ring-primary" type="checkbox" />
+                    <span>Dairy</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input class="form-checkbox rounded text-primary focus:ring-primary" type="checkbox" />
+                    <span>Meat</span>
+                  </label>
+                  <label class="flex items-center gap-2">
+                    <input class="form-checkbox rounded text-primary focus:ring-primary" type="checkbox" />
+                    <span>Pet</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <div class="flex-1">
+            <div
+              class="flex flex-col items-start justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4 sm:flex-row sm:items-center">
+              <div>
+                <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Goats</h1>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Showing 1-12 of 48 results</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <label class="text-sm font-medium" for="sort">Sort by:</label>
+                <select
+                  class="form-select rounded border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark text-sm focus:border-primary focus:ring-primary"
+                  id="sort">
+                  <option>Popularity</option>
+                  <option>Price: Low to High</option>
+                  <option>Price: High to Low</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 gap-6 py-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              <div
+                class="group relative flex flex-col overflow-hidden rounded-lg border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark">
+                <div
+                  class="aspect-square w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0ic3qRbZhLElxPKAX_jZze9ZXsotfOnUddseuN5sVQlNbIfgGgOFykzTGxgbi63VetpAALHHoXefygSvVEvc4c8M84bkcnVDBu18iU_WaKXpEqsTJmubZJDWZDccYcBvB0u8ktXzwCsN-v-QfrJQ3kCFUQOjPJOOZ71sarC56NFDFlQ65rs2PUU-rIuKlouGB7YY31mm_LCKM_uLs0TA0gu3diZdoj6QoeDT6g_fcT6DETjARO5xwjRx32Fi7hH8zf1ec0T7vS_M");'>
+                </div>
+                <div class="flex flex-1 flex-col p-4">
+                  <h3 class="text-base font-medium text-slate-900 dark:text-white">Alpine Goat</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">High-producing dairy goat.</p>
+                  <div class="mt-4 flex flex-col gap-4">
+                    <p class="text-lg font-semibold text-primary">$250</p>
+                    <div class="flex items-center gap-2">
+                      <a href="Checkout.html"><button
+                          class="w-full rounded bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary/80">Buy
+                          Now</button></a>
+                      <a href="Cart.html"><button
+                          class="rounded-md border border-slate-300 dark:border-slate-700 p-1.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                          <span class="material-symbols-outlined">add_shopping_cart</span></a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative flex flex-col overflow-hidden rounded-lg border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark">
+                <div
+                  class="aspect-square w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBekSV7XS_m2kf52HEyn_as0gx9SoiJOoORz2fLzVhLjHrgDE_u44-4I4UIxSZF3kL2tzywR2ML6QrvHNBm-8z4s92StQf4gG2FrRdoNHU0LQU2WS1w-36I02EJAS7H1fSd3oe6fE23qonpcfwr6niHH-RsWAPaYRz6Tpi1vQZHaFyHeYnDl4psYmKIQpzweTGd35SxUFsSiE1NlNPpTKhu5SdXMy7D_GpiUuxUQNkFYw7cW2OXml3PmuxRwwj9I_HtveAYOpYtoPI");'>
+                </div>
+                <div class="flex flex-1 flex-col p-4">
+                  <h3 class="text-base font-medium text-slate-900 dark:text-white">Nubian Goat</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">Known for rich, creamy milk.</p>
+                  <div class="mt-4 flex flex-col gap-4">
+                    <p class="text-lg font-semibold text-primary">$300</p>
+                    <div class="flex items-center gap-2">
+                      <a href="Checkout.html"><button
+                          class="w-full rounded bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary/80">Buy
+                          Now</button></a>
+                      <a href="Cart.html"><button
+                          class="rounded-md border border-slate-300 dark:border-slate-700 p-1.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                          <span class="material-symbols-outlined">add_shopping_cart</span></a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative flex flex-col overflow-hidden rounded-lg border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark">
+                <div
+                  class="aspect-square w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBU8ulU_0h3RcjwgL7_cFeBsXslqLnAs2qFYnlT5M67vQxfL5u2kLhrFg4PSwNdLDUnI2C0UsabHxdBXUPCuFTTdtgpUbw5BXaaNK-R_civ2puR3viq2QUYN6wkXJthKkKax7WOUj8hX33p0luvQw-wemXXFFEkDZOtalpJsYcD3Wab6WmvT9CZRC1-2A6Z8mRey8uW6FXtMscBy1tCATM9X9sZNKXSu3NO_y8mDwdi0mybXNsM-fMSi2_S0SZ163USzj0axKdXDk8");'>
+                </div>
+                <div class="flex flex-1 flex-col p-4">
+                  <h3 class="text-base font-medium text-slate-900 dark:text-white">Saanen Goat</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">Gentle giants, heavy milkers.</p>
+                  <div class="mt-4 flex flex-col gap-4">
+                    <p class="text-lg font-semibold text-primary">$200</p>
+                    <div class="flex items-center gap-2">
+                      <a href="Checkout.html"><button
+                          class="w-full rounded bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary/80">Buy
+                          Now</button></a>
+                      <a href="Cart.html"><button
+                          class="rounded-md border border-slate-300 dark:border-slate-700 p-1.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                          <span class="material-symbols-outlined">add_shopping_cart</span></a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative flex flex-col overflow-hidden rounded-lg border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark">
+                <div
+                  class="aspect-square w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAicLwZo0vwHpiBNb0Sv3QRzeeGzGlTUDebsOi2DZPmNVyTtIR-huREChTPbSr8tWA6fMs9MTJZBr9cHxhfsi9HCAAbMPEpJa51dJocM-89uhYj8tDDf9-8IJPqFSHLi0bmwp_P6CWHgrv5i7w0hftK3s0YMsFPAjxapHFbhNTTF4J5bHmT1d1XvGGVDKJNq1VcqjM6m-WwmNbGNQJHgQdcvkouIBnM6EDd0ISBo-Zm3RoMAyr10ljXmknwD6CPdSEffIPTD8FOTD0");'>
+                </div>
+                <div class="flex flex-1 flex-col p-4">
+                  <h3 class="text-base font-medium text-slate-900 dark:text-white">LaMancha Goat</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">Distinctive ears, docile nature.</p>
+                  <div class="mt-4 flex flex-col gap-4">
+                    <p class="text-lg font-semibold text-primary">$280</p>
+                    <div class="flex items-center gap-2">
+                      <a href="Checkout.html"><button
+                          class="w-full rounded bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary/80">Buy
+                          Now</button></a>
+                      <a href="Cart.html"><button
+                          class="rounded-md border border-slate-300 dark:border-slate-700 p-1.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                          <span class="material-symbols-outlined">add_shopping_cart</span></a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative flex flex-col overflow-hidden rounded-lg border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark">
+                <div
+                  class="aspect-square w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQGNw5k-bHrSgYRc4sFCCXJTTa47UpuwDyM8z_bBsDtEUaiJVsHbvVuo3fzti8tJVKp6sgf1CD4hfyqRwibioFcU3Ilykqdmlz7KmW5EA_8mX6w4zVr6BBSBFRTKARgB6rMv_FiMqzaUoPATriFzWSo6Gu9IKjqIogqAvSvvUqI5Wf5kzjnXZXeBWGplUKeIeHvgf3hAHRDqEwLCIMW45JkqAZYx6-mEb5EOvUFn74lNZDqT1tmizhdao20hDC56iZKiWhBZjj6aI");'>
+                </div>
+                <div class="flex flex-1 flex-col p-4">
+                  <h3 class="text-base font-medium text-slate-900 dark:text-white">Oberhasli Goat</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">Sweet-tempered and friendly.</p>
+                  <div class="mt-4 flex flex-col gap-4">
+                    <p class="text-lg font-semibold text-primary">$260</p>
+                    <div class="flex items-center gap-2">
+                      <a href="Checkout.html"><button
+                          class="w-full rounded bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary/80">Buy
+                          Now</button></a>
+                      <a href="Cart.html"><button
+                          class="rounded-md border border-slate-300 dark:border-slate-700 p-1.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                          <span class="material-symbols-outlined">add_shopping_cart</span></a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative flex flex-col overflow-hidden rounded-lg border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark">
+                <div
+                  class="aspect-square w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvpSY655VwzVsedy2CO1DzfMDOWGirmLVLtZB1CQ4aAD7mTExHwTg-E7bm228HD01E25pRTn0PyTH6JYkIat2hyzzvBGu8ewemS6BO3qWBYr4zjWHrmwT6q0CGphcZv1eb5XC3WPseEXMAcSzcavrqRdqEyrR9dpBFtSDZWUu3yM-nOzDlTPGRXG1a1ZfVVdUP08xNj87M8NdMle2tcyWXhR9AgGS1kUbJqD8c_uFiDSzC6txUKB9eO22rqwS-TnrRU0V2bJscN-k");'>
+                </div>
+                <div class="flex flex-1 flex-col p-4">
+                  <h3 class="text-base font-medium text-slate-900 dark:text-white">Toggenburg Goat</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">Oldest known dairy breed.</p>
+                  <div class="mt-4 flex flex-col gap-4">
+                    <p class="text-lg font-semibold text-primary">$240</p>
+                    <div class="flex items-center gap-2">
+                      <a href="Checkout.html"><button
+                          class="w-full rounded bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary/80">Buy
+                          Now</button></a>
+                      <a href="Cart.html"><button
+                          class="rounded-md border border-slate-300 dark:border-slate-700 p-1.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                          <span class="material-symbols-outlined">add_shopping_cart</span></a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative flex flex-col overflow-hidden rounded-lg border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark">
+                <div
+                  class="aspect-square w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC31SHuRsw5f-H5Ef4anG-kqZ7Cwa0pl20_0tDjyHXO8HHQXsOqzQrE_5V_3bJ7L9evi6FmnxE004nwKZCYv5PxypY4dXeC_u-2xfkaSpki3lTxcgoMOhdA2BJxf21cdYMjwXCI7IRbGtubs0q9hhQS4R__zUKVpkeukJslNKgzHPFX_bsWAY_F4OOCCEfbP3sv0g1SXdHoSl8iQU6dDD0ry_kJEWSQ1RIrw7J9brxmEaZ-2KHesKFKzj1tLi8I3TUMiAes7fPIuGQ");'>
+                </div>
+                <div class="flex flex-1 flex-col p-4">
+                  <h3 class="text-base font-medium text-slate-900 dark:text-white">Nigerian Dwarf</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">Miniature dairy goat, great pet.</p>
+                  <div class="mt-4 flex flex-col gap-4">
+                    <p class="text-lg font-semibold text-primary">$180</p>
+                    <div class="flex items-center gap-2">
+                      <a href="Checkout.html"><button
+                          class="w-full rounded bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary/80">Buy
+                          Now</button></a>
+                      <a href="Cart.html"><button
+                          class="rounded-md border border-slate-300 dark:border-slate-700 p-1.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                          <span class="material-symbols-outlined">add_shopping_cart</span></a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="group relative flex flex-col overflow-hidden rounded-lg border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark">
+                <div
+                  class="aspect-square w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBl_LmSMkLaDg-PqPzoW8KOxyNXixKmWvOrGKu8U4a4Odm1J_mUcksbZeZbIL5sarYKyXY6j09TFj8eX5ARS_3QpThsWWGEfUstnXFG3QbENprf-Y_AZBJJkLcYgdHw-uS6_LlcAZMW633Bk3ZS7BmVSfVV6DzP10DYwqwPc1X-Tajj0uL3UBL2IRYtXvcrtG4dSO5st-JnWqZ3QyOlItvca6Mwj1uZ0Tp2GjPInc164vSzldxC6Q-_qtKQ0RiQpjrAYD_o7cxtc_c");'>
+                </div>
+                <div class="flex flex-1 flex-col p-4">
+                  <h3 class="text-base font-medium text-slate-900 dark:text-white">Pygmy Goat</h3>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">Small, hardy, and friendly.</p>
+                  <div class="mt-4 flex flex-col gap-4">
+                    <p class="text-lg font-semibold text-primary">$200</p>
+                    <div class="flex items-center gap-2">
+                      <a href="Checkout.html"><button
+                          class="w-full rounded bg-primary px-3 py-1.5 text-sm font-medium text-white hover:bg-primary/80">Buy
+                          Now</button></a>
+                      <a href="Cart.html"><button
+                          class="rounded-md border border-slate-300 dark:border-slate-700 p-1.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                          <span class="material-symbols-outlined">add_shopping_cart</span></a>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <nav class="flex items-center justify-center gap-2 border-t border-slate-200 dark:border-slate-800 pt-6">
+              <a class="inline-flex h-10 w-10 items-center justify-center rounded text-slate-500 hover:bg-primary/10"
+                href="#">
+                <span class="material-symbols-outlined text-xl"> chevron_left </span>
+              </a>
+              <a class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white"
+                href="#">1</a>
+              <!-- <a class="inline-flex h-10 w-10 items-center justify-center rounded text-sm text-slate-600 dark:text-slate-400 hover:bg-primary/10" href="#">2</a>
+<a class="inline-flex h-10 w-10 items-center justify-center rounded text-sm text-slate-600 dark:text-slate-400 hover:bg-primary/10" href="#">3</a>
+<a class="inline-flex h-10 w-10 items-center justify-center rounded text-sm text-slate-600 dark:text-slate-400 hover:bg-primary/10" href="#">4</a> -->
+              <a class="inline-flex h-10 w-10 items-center justify-center rounded text-slate-500 hover:bg-primary/10"
+                href="#">
+                <span class="material-symbols-outlined text-xl"> chevron_right </span>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>
