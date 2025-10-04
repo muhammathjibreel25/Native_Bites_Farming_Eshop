@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://nativebites.neocities.org/Assets/Rooster%20Logo.png">
+  <title>NativeBites - Login & Register</title>
+  <style>
+    /* Reset & layout */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f7ff, #e0ffe0);
+      text-align: center;
+      color: #333;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 2s ease-in-out;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #1d3557;
+      animation: bounce 2s infinite;
+    }
+
+    p {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    .emoji {
+      font-size: 4rem;
+      margin-bottom: 15px;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: #2d6a4f;
+      font-style: italic;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 24px;
+      background: #40916c;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #2d6a4f;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      width: 100%;
+      background: #f6f8f6;
+      color: #333;
+      padding: 15px 0;
+      border-top: 1px solid #ccc;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer span {
+      font-weight: bold;
+    }
+
+    /* Animations */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      p { font-size: 1rem; }
+      .emoji { font-size: 3rem; }
+      button { padding: 10px 20px; font-size: 0.9rem; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.7rem; }
+      p { font-size: 0.95rem; }
+      button { width: 90%; padding: 10px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <div class="emoji">🔑👥</div>
+    <h1>Login & Registration Coming Soon!</h1>
+    <p>This feature is under working.<br>
+       Thank you for visiting NativeBites ❤️</p>
+    <div class="note">⚡ This is a testing period — please stay tuned!</div>
+
+    <button onclick="goHome()">Explore Website</button>
+  </div>
+
+  <footer>
+    Developed by <span>Muhammath Jibreel</span><br>
+    © 2025 Native Bites. All rights reserved.
+  </footer>
+
+  <script>
+    function goHome() {
+      alert("Redirecting you to Home...");
+      window.location.href = "Shop.html"; // change to your home page
+    }
+  </script>
+
+</body>
+</html>

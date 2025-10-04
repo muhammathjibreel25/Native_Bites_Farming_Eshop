@@ -7,7 +7,7 @@ const Product = require('../models/Product'); // To update stock
 
 // @desc    Create new order and process payment intent
 // @route   POST /api/orders
-// @access  Private (Maps to Checkout.html submission)
+// @access  Private (Maps to Information.html submission)
 const addOrderItems = asyncHandler(async (req, res) => {
     const { 
         orderItems, 
