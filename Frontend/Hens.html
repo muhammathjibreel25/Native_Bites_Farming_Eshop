@@ -81,6 +81,7 @@
                 min-width: auto;
             }
         }
+
         /* --- END CHATBOT STYLES --- */
     </style>
 </head>
@@ -134,11 +135,34 @@
             <div class="flex flex-col gap-8 lg:flex-row">
                 <aside class="w-full lg:w-64 xl:w-72">
                     <div class="sticky top-28 flex flex-col gap-6">
-                        <div class="flex items-center gap-2 text-sm text-black/60 dark:text-white/60">
-                            <a class="hover:text-primary" href="Shop.html">Shop</a>
-                            <span>/</span>
-                            <span class="font-medium text-black dark:text-white">Hens</span>
+                        <!-- Category Buttons -->
+                        <div class="flex flex-wrap gap-3 mt-6">
+                            <a href="Shop.html">
+                                <button class="px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20
+            bg-black/5 dark:bg-white/5 text-black dark:text-white">
+                                    All
+                                </button>
+                            </a>
+                            <a href="Hens.html">
+                                <button
+                                    class="px-4 py-2 rounded-full text-sm font-medium transition-colors bg-green-500 text-white shadow-md hover:bg-green-600">
+                                    Hens
+                                </button>
+                            </a>
+                            <a href="Goats.html">
+                                <button class="px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20
+            bg-black/5 dark:bg-white/5 text-black dark:text-white">
+                                    Goats
+                                </button>
+                            </a>
+                            <a href="Eggs.html">
+                                <button class="px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20
+            bg-black/5 dark:bg-white/5 text-black dark:text-white">
+                                    Eggs
+                                </button>
+                            </a>
                         </div>
+
                         <div class="space-y-2">
                             <h1 class="text-3xl font-bold text-black dark:text-white">Hens</h1>
                             <p class="text-sm text-black/70 dark:text-white/70">Find the perfect hens for your backyard
@@ -249,7 +273,7 @@
                                     <a href="Cart.html"><button
                                             class="rounded-lg bg-primary/20 p-2 text-primary transition-colors hover:bg-primary/30 dark:bg-primary/20 dark:hover:bg-primary/30">
                                             <span class="material-symbols-outlined">add_shopping_cart</span></a>
-                                        </button>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +299,7 @@
                                     <a href="Cart.html"><button
                                             class="rounded-lg bg-primary/20 p-2 text-primary transition-colors hover:bg-primary/30 dark:bg-primary/20 dark:hover:bg-primary/30">
                                             <span class="material-symbols-outlined">add_shopping_cart</span></a>
-                                        </button>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -292,7 +316,8 @@
                                 </div>
                             </div>
                             <div class="flex flex-1 flex-col p-4">
-                                <p class="flex-1 text-sm text-black/70 dark:text-white/70">A record-setting egg layer with
+                                <p class="flex-1 text-sm text-black/70 dark:text-white/70">A record-setting egg layer
+                                    with
                                     a gentle temperament and beautiful iridescent black feathers.</p>
                                 <div class="mt-4 flex items-center gap-2">
                                     <a href="Information.html"><button
@@ -301,7 +326,7 @@
                                     <a href="Cart.html"><button
                                             class="rounded-lg bg-primary/20 p-2 text-primary transition-colors hover:bg-primary/30 dark:bg-primary/20 dark:hover:bg-primary/30">
                                             <span class="material-symbols-outlined">add_shopping_cart</span></a>
-                                        </button>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -327,7 +352,7 @@
                                     <a href="Cart.html"><button
                                             class="rounded-lg bg-primary/20 p-2 text-primary transition-colors hover:bg-primary/30 dark:bg-primary/20 dark:hover:bg-primary/30">
                                             <span class="material-symbols-outlined">add_shopping_cart</span></a>
-                                        </button>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -353,7 +378,7 @@
                                     <a href="Cart.html"><button
                                             class="rounded-lg bg-primary/20 p-2 text-primary transition-colors hover:bg-primary/30 dark:bg-primary/20 dark:hover:bg-primary/30">
                                             <span class="material-symbols-outlined">add_shopping_cart</span></a>
-                                        </button>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -361,206 +386,245 @@
                 </div>
             </div>
         </main>
-        <footer class="border-t border-black/10 bg-background-light dark:border-white/10 dark:bg-background-dark">
-            <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-                <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
-                    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-center md:justify-start">
-                        <a class="text-sm text-black/60 transition-colors hover:text-primary dark:text-white/60 dark:hover:text-primary"
-                            href="About.html">About Us</a>
-                        <a class="text-sm text-black/60 transition-colors hover:text-primary dark:text-white/60 dark:hover:text-primary"
-                            href="Contact.html">Contact</a>
-                        <a class="text-sm text-black/60 transition-colors hover:text-primary dark:text-white/60 dark:hover:text-primary"
-                            href="FAQ.html">FAQ</a>
-                        <a class="text-sm text-black/60 transition-colors hover:text-primary dark:text-white/60 dark:hover:text-primary"
-                            href="Cart.html">Shipping & Returns</a>
+        <!-- Footer -->
+        <footer class="border-t border-primary/20 bg-background-light dark:bg-background-dark">
+            <div class="container mx-auto px-5 py-6">
+                <div
+                    class="flex flex-col md:flex-row items-center md:items-start justify-between gap-6 text-center md:text-left">
+
+                    <!-- Left Section -->
+                    <div class="flex flex-col items-center md:items-start gap-2">
+                        <div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2">
+                            <a href="Contact.html"
+                                class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">Contact
+                                Us</a>
+                            <a href="FAQ.html"
+                                class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">FAQ</a>
+                            <a href="Privacypolicy.html"
+                                class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">Privacy
+                                Policy</a>
+                            <a href="Terms.html"
+                                class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">Terms
+                                of Service</a>
+                        </div>
+                        <p class="text-xs text-stone-600 dark:text-stone-400 mt-2">© 2024 Native Bites. All rights
+                            reserved.</p>
+                        <p class="text-xs text-stone-500 dark:text-stone-400">Developed by <span
+                                class="font-medium">Muhammath Jibreel</span></p>
                     </div>
-                    <p class="text-sm text-black/60 dark:text-white/60">© 2025 Native Bites. All rights reserved.</p>
+
+                    <!-- Right Section -->
+                    <div class="flex justify-center md:justify-end gap-4">
+                        <a href="#" class="text-stone-500 hover:text-primary transition" aria-label="Facebook">
+                            <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-stone-500 hover:text-primary transition" aria-label="Instagram">
+                            <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-stone-500 hover:text-primary transition" aria-label="Twitter">
+                            <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+
                 </div>
-                <p class="text-lg font-bold">Developed by Muhammath Jibreel</p>
             </div>
         </footer>
-    </div>
 
-    <div id="chatbot-shade" class="fixed inset-0 bg-black/50 hidden z-[999]" onclick="toggleChatbot()"></div>
 
-    <div id="chatbot-container"
-        class="chatbot-container w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-xl hover:bg-primary/90 z-[1000] shadow-primary/50">
+        <div id="chatbot-shade" class="fixed inset-0 bg-black/50 hidden z-[999]" onclick="toggleChatbot()"></div>
 
-        <span id="chatbot-icon-closed" class="material-symbols-outlined text-3xl animate-pulse-pop">chat</span>
+        <div id="chatbot-container"
+            class="chatbot-container w-16 h-16 rounded-full bg-primary flex items-center justify-center text-white shadow-xl hover:bg-primary/90 z-[1000] shadow-primary/50">
 
-        <div id="chatbot-window-content"
-            class="w-full h-full flex-col hidden bg-background-light dark:bg-background-dark border border-black/20 dark:border-white/20">
+            <span id="chatbot-icon-closed" class="material-symbols-outlined text-3xl animate-pulse-pop">chat</span>
 
-            <div
-                class="p-4 border-b border-black/10 dark:border-white/10 flex justify-between items-center flex-shrink-0 bg-primary/10 dark:bg-primary/20 shadow-md">
-                <h3 class="font-bold text-xl text-primary flex items-center gap-2">
-                    <span class="material-symbols-outlined text-2xl">pest_control</span>Agri-Bot Assistant
-                </h3>
-                <button onclick="toggleChatbot()"
-                    class="p-1 rounded-full text-black/80 dark:text-white hover:bg-red-500 hover:text-white transition-colors focus:ring-2 focus:ring-red-500 focus:outline-none">
-                    <span class="material-symbols-outlined text-xl">close</span>
-                </button>
-            </div>
+            <div id="chatbot-window-content"
+                class="w-full h-full flex-col hidden bg-background-light dark:bg-background-dark border border-black/20 dark:border-white/20">
 
-            <div id="chat-messages" class="p-4 flex-grow overflow-y-auto space-y-4">
+                <div
+                    class="p-4 border-b border-black/10 dark:border-white/10 flex justify-between items-center flex-shrink-0 bg-primary/10 dark:bg-primary/20 shadow-md">
+                    <h3 class="font-bold text-xl text-primary flex items-center gap-2">
+                        <span class="material-symbols-outlined text-2xl">pest_control</span>Agri-Bot Assistant
+                    </h3>
+                    <button onclick="toggleChatbot()"
+                        class="p-1 rounded-full text-black/80 dark:text-white hover:bg-red-500 hover:text-white transition-colors focus:ring-2 focus:ring-red-500 focus:outline-none">
+                        <span class="material-symbols-outlined text-xl">close</span>
+                    </button>
                 </div>
-            <div id="analysis-status" class="hidden text-center p-2 text-xs 
+
+                <div id="chat-messages" class="p-4 flex-grow overflow-y-auto space-y-4">
+                </div>
+                <div id="analysis-status" class="hidden text-center p-2 text-xs 
                 bg-primary/10 dark:bg-primary/20 text-black/80 dark:text-white/80 
                 border-t border-primary/20 dark:border-primary/40 flex-shrink-0">
-                <span class="material-symbols-outlined text-sm align-middle mr-1 animate-pulse">cached</span>
-                <span id="analysis-text" class="align-middle">Analyzing your question...</span>
-            </div>
+                    <span class="material-symbols-outlined text-sm align-middle mr-1 animate-pulse">cached</span>
+                    <span id="analysis-text" class="align-middle">Analyzing your question...</span>
+                </div>
 
-            <div
-                class="p-3 border-t border-black/10 dark:border-white/10 flex flex-shrink-0 bg-background-light dark:bg-background-dark">
-                <input id="chat-input" type="text" placeholder="Ask a question..."
-                    class="flex-grow bg-transparent border-none p-2 focus:ring-2 focus:ring-primary focus:border-transparent focus:outline-none placeholder-black/50 dark:placeholder-white/50 text-primary dark:text-primary rounded-lg transition-all duration-200"
-                    onkeydown="if(event.key === 'Enter') sendMessage()" />
-                <button onclick="sendMessage()"
-                    class="ml-2 p-2 rounded-full text-white bg-primary hover:bg-primary/90 transition-colors flex-shrink-0">
-                    <span class="material-symbols-outlined">send</span>
-                </button>
+                <div
+                    class="p-3 border-t border-black/10 dark:border-white/10 flex flex-shrink-0 bg-background-light dark:bg-background-dark">
+                    <input id="chat-input" type="text" placeholder="Ask a question..."
+                        class="flex-grow bg-transparent border-none p-2 focus:ring-2 focus:ring-primary focus:border-transparent focus:outline-none placeholder-black/50 dark:placeholder-white/50 text-primary dark:text-primary rounded-lg transition-all duration-200"
+                        onkeydown="if(event.key === 'Enter') sendMessage()" />
+                    <button onclick="sendMessage()"
+                        class="ml-2 p-2 rounded-full text-white bg-primary hover:bg-primary/90 transition-colors flex-shrink-0">
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-    <script>
-        const chatContainer = document.getElementById('chatbot-container');
-        const chatIconClosed = document.getElementById('chatbot-icon-closed');
-        const chatContent = document.getElementById('chatbot-window-content');
-        const chatShade = document.getElementById('chatbot-shade');
-        const chatMessages = document.getElementById('chat-messages');
-        const chatInput = document.getElementById('chat-input');
+        <script>
+            const chatContainer = document.getElementById('chatbot-container');
+            const chatIconClosed = document.getElementById('chatbot-icon-closed');
+            const chatContent = document.getElementById('chatbot-window-content');
+            const chatShade = document.getElementById('chatbot-shade');
+            const chatMessages = document.getElementById('chat-messages');
+            const chatInput = document.getElementById('chat-input');
 
-        // Status Elements
-        const analysisStatus = document.getElementById('analysis-status');
-        const analysisText = document.getElementById('analysis-text');
+            // Status Elements
+            const analysisStatus = document.getElementById('analysis-status');
+            const analysisText = document.getElementById('analysis-text');
 
-        let initialGreetingSent = false;
+            let initialGreetingSent = false;
 
-        // --- CHAT COMMUNICATION LOGIC ---
+            // --- CHAT COMMUNICATION LOGIC ---
 
-        function showAnalysisStatus(text) {
-            // Using strong tags for bold text inside the status bar
-            analysisText.innerHTML = `<strong>${text}</strong>`;
-            analysisStatus.classList.remove('hidden');
-        }
+            function showAnalysisStatus(text) {
+                // Using strong tags for bold text inside the status bar
+                analysisText.innerHTML = `<strong>${text}</strong>`;
+                analysisStatus.classList.remove('hidden');
+            }
 
-        function hideAnalysisStatus() {
-            analysisStatus.classList.add('hidden');
-        }
+            function hideAnalysisStatus() {
+                analysisStatus.classList.add('hidden');
+            }
 
-        function addMessage(text, isUser) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `flex ${isUser ? 'justify-end' : 'justify-start'}`;
+            function addMessage(text, isUser) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `flex ${isUser ? 'justify-end' : 'justify-start'}`;
 
-            const bubble = document.createElement('div');
-            bubble.className = `p-3 max-w-[80%] md:max-w-xs text-sm leading-relaxed shadow-md transition-all duration-300 ${
-                isUser
+                const bubble = document.createElement('div');
+                bubble.className = `p-3 max-w-[80%] md:max-w-xs text-sm leading-relaxed shadow-md transition-all duration-300 ${isUser
                     // USER: Primary background, corner points to bottom-left (bl-xl)
                     ? 'bg-primary text-white rounded-t-xl rounded-bl-xl'
                     // BOT: Light background, corner points to bottom-right (br-xl)
                     : 'bg-black/5 dark:bg-white/5 text-black dark:text-white rounded-t-xl rounded-br-xl border border-black/10 dark:border-white/10'
-                }`;
+                    }`;
 
-            bubble.innerHTML = text.replace(/\n/g, '<br>');
+                bubble.innerHTML = text.replace(/\n/g, '<br>');
 
-            chatMessages.appendChild(messageDiv);
-            messageDiv.appendChild(bubble);
+                chatMessages.appendChild(messageDiv);
+                messageDiv.appendChild(bubble);
 
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
 
-        async function sendMessage() {
-            const message = chatInput.value.trim();
-            if (message === '') return;
+            async function sendMessage() {
+                const message = chatInput.value.trim();
+                if (message === '') return;
 
-            addMessage(message, true); // Display user message
-            chatInput.value = ''; // Clear input
+                addMessage(message, true); // Display user message
+                chatInput.value = ''; // Clear input
 
-            // 1. Show Analysis Status
-            showAnalysisStatus("Analyzing your question...");
+                // 1. Show Analysis Status
+                showAnalysisStatus("Analyzing your question...");
 
-            // Wait briefly to show the "Analyzing" state
-            await new Promise(resolve => setTimeout(resolve, 500));
+                // Wait briefly to show the "Analyzing" state
+                await new Promise(resolve => setTimeout(resolve, 500));
 
-            // 2. Change status text to "Generating"
-            showAnalysisStatus("Agri-Bot is generating a response...");
+                // 2. Change status text to "Generating"
+                showAnalysisStatus("Agri-Bot is generating a response...");
 
-            // Simulate the backend call delay
-            try {
-                // NOTE: This fetch call is for demonstration. You MUST implement your own server endpoint at http://localhost:3000/api/chat
-                const response = await fetch('http://localhost:3000/api/chat', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ prompt: message }),
-                });
+                // Simulate the backend call delay
+                try {
+                    // NOTE: This fetch call is for demonstration. You MUST implement your own server endpoint at http://localhost:3000/api/chat
+                    const response = await fetch('http://localhost:3000/api/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ prompt: message }),
+                    });
 
-                const data = await response.json();
+                    const data = await response.json();
 
-                // 3. Simulate a short typing delay before response appears
-                await new Promise(resolve => setTimeout(resolve, 1000));
+                    // 3. Simulate a short typing delay before response appears
+                    await new Promise(resolve => setTimeout(resolve, 1000));
 
-                // 4. Hide Status
-                hideAnalysisStatus();
+                    // 4. Hide Status
+                    hideAnalysisStatus();
 
-                if (response.ok) {
-                    addMessage(data.response || "This is a simulated response from Agri-Bot.", false);
+                    if (response.ok) {
+                        addMessage(data.response || "This is a simulated response from Agri-Bot.", false);
+                    } else {
+                        const errorText = data.error || 'Bot replied with an unknown error.';
+                        addMessage(`❌ Bot replied with an error: ${errorText}. (Simulating generic reply.)`, false);
+                    }
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                    hideAnalysisStatus();
+                    // Fallback message for network or server connection errors
+                    addMessage("❌ Error: Could not connect to the Agri-Bot server. (Simulating error reply: Please check your network or console.)", false);
+                }
+            }
+
+            // --- CHATBOT TOGGLE LOGIC ---
+
+            function toggleChatbot() {
+                const isOpen = chatContainer.classList.toggle('open');
+
+                if (isOpen) {
+                    // Opening
+                    chatShade.classList.remove('hidden');
+                    chatIconClosed.style.display = 'none';
+                    chatContent.style.display = 'flex';
+
+                    chatContainer.classList.remove('w-16', 'h-16', 'rounded-full', 'bg-primary', 'shadow-xl', 'hover:bg-primary/90', 'shadow-primary/50');
+                    chatIconClosed.classList.remove('animate-pulse-pop');
+
+                    chatInput.focus();
+
+                    // Add initial greeting only once when opening
+                    if (!initialGreetingSent) {
+                        addMessage("👋 Hello! I'm Agri-Bot. I can help you with product information, shipping, or any farm-related queries you have about Native Bites.", false);
+                        initialGreetingSent = true;
+                    }
+                    chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll after adding greeting
+
                 } else {
-                    const errorText = data.error || 'Bot replied with an unknown error.';
-                    addMessage(`❌ Bot replied with an error: ${errorText}. (Simulating generic reply.)`, false);
+                    // Closing
+                    chatContainer.classList.add('w-16', 'h-16', 'rounded-full', 'bg-primary', 'shadow-xl', 'hover:bg-primary/90', 'shadow-primary/50');
+                    chatIconClosed.classList.add('animate-pulse-pop');
+
+                    setTimeout(() => {
+                        chatContent.style.display = 'none';
+                        chatIconClosed.style.display = 'block';
+                        chatShade.classList.add('hidden');
+                    }, 400);
                 }
-            } catch (error) {
-                console.error('Fetch error:', error);
-                hideAnalysisStatus();
-                // Fallback message for network or server connection errors
-                addMessage("❌ Error: Could not connect to the Agri-Bot server. (Simulating error reply: Please check your network or console.)", false);
             }
-        }
 
-        // --- CHATBOT TOGGLE LOGIC ---
-
-        function toggleChatbot() {
-            const isOpen = chatContainer.classList.toggle('open');
-
-            if (isOpen) {
-                // Opening
-                chatShade.classList.remove('hidden');
-                chatIconClosed.style.display = 'none';
-                chatContent.style.display = 'flex';
-
-                chatContainer.classList.remove('w-16', 'h-16', 'rounded-full', 'bg-primary', 'shadow-xl', 'hover:bg-primary/90', 'shadow-primary/50');
-                chatIconClosed.classList.remove('animate-pulse-pop');
-
-                chatInput.focus();
-
-                // Add initial greeting only once when opening
-                if (!initialGreetingSent) {
-                    addMessage("👋 Hello! I'm Agri-Bot. I can help you with product information, shipping, or any farm-related queries you have about Native Bites.", false);
-                    initialGreetingSent = true;
-                }
-                chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll after adding greeting
-
-            } else {
-                // Closing
-                chatContainer.classList.add('w-16', 'h-16', 'rounded-full', 'bg-primary', 'shadow-xl', 'hover:bg-primary/90', 'shadow-primary/50');
-                chatIconClosed.classList.add('animate-pulse-pop');
-
-                setTimeout(() => {
-                    chatContent.style.display = 'none';
-                    chatIconClosed.style.display = 'block';
-                    chatShade.classList.add('hidden');
-                }, 400);
-            }
-        }
-
-        // Bind click event to the icon when closed
-        chatIconClosed.onclick = function (event) {
-            event.stopPropagation();
-            toggleChatbot();
-        };
-    </script>
+            // Bind click event to the icon when closed
+            chatIconClosed.onclick = function (event) {
+                event.stopPropagation();
+                toggleChatbot();
+            };
+        </script>
 </body>
 
 </html>

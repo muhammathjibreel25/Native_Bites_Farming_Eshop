@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,20 @@
   <title>NativeBites - Login & Register</title>
   <style>
     /* Reset & layout */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
       font-family: Arial, sans-serif;
       background: linear-gradient(135deg, #f0f7ff, #e0ffe0);
-      text-align: center;
       color: #333;
+      text-align: center;
     }
 
     .content {
@@ -72,74 +78,204 @@
 
     /* Footer */
     footer {
-      width: 100%;
       background: #f6f8f6;
       color: #333;
-      padding: 15px 0;
       border-top: 1px solid #ccc;
-      text-align: center;
-      font-size: 0.9rem;
+      padding: 20px 5%;
     }
 
-    footer span {
-      font-weight: bold;
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 15px;
+      text-align: left;
+    }
+
+    .footer-left {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #555;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #1dc91d;
+    }
+
+    .footer-left p {
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    .footer-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-right a svg {
+      fill: #555;
+      transition: all 0.3s;
+    }
+
+    .footer-right a:hover svg {
+      fill: #1dc91d;
+      transform: scale(1.2);
     }
 
     /* Animations */
     @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
-    /* Responsive */
+    /* Responsive Design */
     @media (max-width: 768px) {
-      h1 { font-size: 2rem; }
-      p { font-size: 1rem; }
-      .emoji { font-size: 3rem; }
-      button { padding: 10px 20px; font-size: 0.9rem; }
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .emoji {
+        font-size: 3rem;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+
+      .footer-left,
+      .footer-right {
+        justify-content: center;
+        text-align: center;
+      }
     }
 
     @media (max-width: 480px) {
-      h1 { font-size: 1.7rem; }
-      p { font-size: 0.95rem; }
-      button { width: 90%; padding: 10px; }
-    }
+      h1 {
+        font-size: 1.7rem;
+      }
 
+      p {
+        font-size: 0.95rem;
+      }
+
+      button {
+        width: 90%;
+        padding: 10px;
+      }
+    }
   </style>
 </head>
-<body>
 
+<body>
   <div class="content">
     <div class="emoji">🔑👥</div>
     <h1>Login & Registration Coming Soon!</h1>
     <p>This feature is under working.<br>
-       Thank you for visiting NativeBites ❤️</p>
+      Thank you for visiting NativeBites ❤️</p>
     <div class="note">⚡ This is a testing period — please stay tuned!</div>
-
     <button onclick="goHome()">Explore Website</button>
   </div>
 
+  <!-- Footer -->
   <footer>
-    Developed by <span>Muhammath Jibreel</span><br>
-    © 2025 Native Bites. All rights reserved.
+    <div class="footer-container">
+      <!-- Left Section -->
+      <div class="footer-left">
+        <div class="footer-links">
+          <a href="Contact.html">Contact Us</a>
+          <a href="Privacypolicy.html">Privacy Policy</a>
+          <a href="Terms.html">Terms of Service</a>
+        </div>
+        <p>© 2024 Native Bites. All rights reserved.</p>
+        <p>Developed by <strong>Muhammath Jibreel</strong></p>
+      </div>
+
+      <!-- Right Section -->
+      <div class="footer-right">
+        <a href="#" aria-label="Facebook">
+          <svg height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z">
+            </path>
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z">
+            </path>
+          </svg>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <svg height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Z">
+            </path>
+          </svg>
+        </a>
+      </div>
+    </div>
   </footer>
 
   <script>
     function goHome() {
       alert("Redirecting you to Home...");
-      window.location.href = "Shop.html"; // change to your home page
+      window.location.href = "Shop.html";
     }
   </script>
-
 </body>
+
 </html>

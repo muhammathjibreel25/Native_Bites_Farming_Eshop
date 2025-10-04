@@ -3,12 +3,14 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Native Bites FAQ</title>
+    <title>Native Bites - FAQ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
-    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Work+Sans:wght@400;500;600;700"
+    <link as="style"
+        href="https://fonts.googleapis.com/css2?display=swap&amp;family=Work+Sans:wght@400;500;600;700"
         onload="this.rel='stylesheet'" rel="stylesheet" />
-        <link rel="icon" href="https://nativebites.neocities.org/Assets/Rooster%20Logo.png">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="icon" href="https://nativebites.neocities.org/Assets/Rooster%20Logo.png">
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -40,185 +42,108 @@
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
-    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-        <header
-            class="flex items-center justify-between whitespace-nowrap border-b border-slate-200/80 dark:border-slate-800/80 px-10 py-4">
+    <div class="flex flex-col min-h-screen">
+
+        <!-- Header -->
+        <header class="flex items-center justify-between border-b border-slate-200/80 dark:border-slate-800/80 px-6 py-5">
             <div class="flex items-center gap-3">
-                <svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48">
                     <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
                 </svg>
-                <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Native Bites</h2>
+                <h1 class="text-2xl font-bold text-slate-900 dark:text-white">Native Bites</h1>
             </div>
-            <div class="flex items-center gap-6">
-                <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-                    <a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
-                        href="Shop.html">Shop</a>
-                    <a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
-                        href="About.html">Our Kutty Story</a>
-                    <a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
-                        href="#">Recipes</a>
-                    <a class="text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors"
-                        href="Contact.html">Contact</a>
-                </nav>
-                <div class="flex items-center gap-4">
-                    <a href="Cart.html"><button
-                            class="flex items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 h-10 px-5 text-sm font-bold text-primary hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors">
-                            Cart
-                        </button></a>
-                    <a href="Myaccount.html">
-                        <div class="h-10 w-10 rounded-full bg-cover bg-center"
-                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEhFW6m3xFvlYrfgfaYylPlkkkPxfvIOp4nVQl5nCWpiQUqLz-sCXTj2P7zIapxGY2a_QquuaQPp7msE-XxC86PaLIc6LMZQ7rq3YsOLeYQkNa1Xrsl89o5Agtl5buz-XL57XgwsfCYdz0q1OzM35VJ1gTAuoFtqiSqrFhGOHPbWSfrC-oLfJZbSYcQyrdMJXs6FhMNmdG49blH-xgRUKByRTSvfB2Vf3vvlnbJmL0TPH7BJ8BMjk3KvL0Wxv9afQOAlPCU4qpDLo");'>
-                        </div>
-                    </a>
-                </div>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+                <a href="Shop.html" class="text-slate-700 dark:text-slate-300 hover:text-primary transition">Shop</a>
+                <a href="About.html" class="text-slate-700 dark:text-slate-300 hover:text-primary transition">Our Kutty Story</a>
+                <a href="#" class="text-slate-700 dark:text-slate-300 hover:text-primary transition">Recipes</a>
+                <a href="Contact.html" class="text-slate-700 dark:text-slate-300 hover:text-primary transition">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <a href="Cart.html">
+                    <button class="flex items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 h-10 px-5 text-sm font-bold text-primary hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors">
+                        Cart
+                    </button>
+                </a>
+                <a href="Myaccount.html">
+                    <div class="h-10 w-10 rounded-full bg-cover bg-center"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEhFW6m3xFvlYrfgfaYylPlkkkPxfvIOp4nVQl5nCWpiQUqLz-sCXTj2P7zIapxGY2a_QquuaQPp7msE-XxC86PaLIc6LMZQ7rq3YsOLeYQkNa1Xrsl89o5Agtl5buz-XL57XgwsfCYdz0q1OzM35VJ1gTAuoFtqiSqrFhGOHPbWSfrC-oLfJZbSYcQyrdMJXs6FhMNmdG49blH-xgRUKByRTSvfB2Vf3vvlnbJmL0TPH7BJ8BMjk3KvL0Wxv9afQOAlPCU4qpDLo");'>
+                    </div>
+                </a>
             </div>
         </header>
-        <main class="flex-grow">
-            <section class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-                <div class="text-center">
-                    <h1 class="text-4xl font-bold tracking-tighter text-slate-900 dark:text-white sm:text-5xl">
-                        Frequently Asked Questions</h1>
-                    <p class="mt-4 text-lg text-slate-600 dark:text-slate-400">Find answers to common questions about
-                        our products, ordering, shipping, and more.</p>
-                </div>
-                <div class="mt-12">
-                    <div class="relative">
-                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                            <svg class="h-5 w-5 text-slate-400 dark:text-slate-500" fill="currentColor" height="24"
-                                viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
-                                </path>
-                            </svg>
-                        </div>
-                        <input
-                            class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark py-3 pl-10 pr-4 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-primary focus:ring-primary"
-                            placeholder="Search for a question" type="search" />
-                    </div>
-                </div>
-                <div class="mt-8 space-y-4">
-                    <details class="group rounded-lg bg-white/5 dark:bg-black/5 p-4" open="">
-                        <summary
-                            class="flex list-none cursor-pointer items-center justify-between font-medium text-slate-900 dark:text-white">
-                            What types of products do you offer?
-                            <div class="text-slate-500 transition-transform duration-300 group-open:rotate-180">
-                                <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
-                                    </path>
-                                </svg>
-                            </div>
-                        </summary>
-                        <p class="mt-3 text-slate-600 dark:text-slate-400">
-                            We offer a variety of farm-fresh products, including free-range chicken eggs, pasture-raised
-                            goats, and other seasonal farm goods. Our selection varies based on availability and the
-                            time of year, ensuring you always receive the freshest products.
-                        </p>
-                    </details>
-                    <details class="group rounded-lg bg-white/5 dark:bg-black/5 p-4">
-                        <summary
-                            class="flex list-none cursor-pointer items-center justify-between font-medium text-slate-900 dark:text-white">
-                            How do I place an order?
-                            <div class="text-slate-500 transition-transform duration-300 group-open:rotate-180">
-                                <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
-                                    </path>
-                                </svg>
-                            </div>
-                        </summary>
-                        <p class="mt-3 text-slate-600 dark:text-slate-400">
-                            Placing an order is simple. Browse our online shop, add your desired products to the cart,
-                            and proceed to checkout. You'll be prompted to enter your shipping and payment information.
-                            We accept various payment methods for your convenience.
-                        </p>
-                    </details>
-                    <details class="group rounded-lg bg-white/5 dark:bg-black/5 p-4">
-                        <summary
-                            class="flex list-none cursor-pointer items-center justify-between font-medium text-slate-900 dark:text-white">
-                            What are your shipping options and costs?
-                            <div class="text-slate-500 transition-transform duration-300 group-open:rotate-180">
-                                <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
-                                    </path>
-                                </svg>
-                            </div>
-                        </summary>
-                        <p class="mt-3 text-slate-600 dark:text-slate-400">
-                            We offer several shipping options to meet your needs, including standard and expedited
-                            delivery. Shipping costs are calculated at checkout based on your location and the weight of
-                            your order. We strive to provide affordable and reliable shipping.
-                        </p>
-                    </details>
-                    <details class="group rounded-lg bg-white/5 dark:bg-black/5 p-4">
-                        <summary
-                            class="flex list-none cursor-pointer items-center justify-between font-medium text-slate-900 dark:text-white">
-                            Can I return or exchange a product?
-                            <div class="text-slate-500 transition-transform duration-300 group-open:rotate-180">
-                                <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
-                                    </path>
-                                </svg>
-                            </div>
-                        </summary>
-                        <p class="mt-3 text-slate-600 dark:text-slate-400">
-                            Due to the perishable nature of our products, we generally do not accept returns. However,
-                            if you are unsatisfied with your purchase for any reason, please contact our customer
-                            support within 24 hours of delivery, and we will do our best to resolve the issue.
-                        </p>
-                    </details>
-                    <details class="group rounded-lg bg-white/5 dark:bg-black/5 p-4">
-                        <summary
-                            class="flex list-none cursor-pointer items-center justify-between font-medium text-slate-900 dark:text-white">
-                            How can I contact customer support?
-                            <div class="text-slate-500 transition-transform duration-300 group-open:rotate-180">
-                                <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z">
-                                    </path>
-                                </svg>
-                            </div>
-                        </summary>
-                        <p class="mt-3 text-slate-600 dark:text-slate-400">
-                            You can reach our customer support team via the contact form on our website or by emailing
-                            us directly at support@Native Bites.com. We typically respond within one business day.
-                        </p>
-                    </details>
-                </div>
-            </section>
-        </main>
-        <footer class="border-t border-slate-200/80 dark:border-slate-800/80 bg-background-light dark:bg-background-dark">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="py-10 text-center space-y-6">
-            <!-- Developer name -->
-            <p class="text-lg font-bold text-slate-900 dark:text-white">Developed by Muhammath Jibreel</p>
 
-            <!-- Divider line -->
-            <div class="h-px w-24 mx-auto bg-slate-300 dark:bg-slate-700"></div>
-
-            <!-- Privacy and Terms links -->
-            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-                <a class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors font-medium"
-                    href="Privacypolicy.html">Privacy Policy</a>
-                <a class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors font-medium"
-                    href="Terms.html">Terms of Service</a>
+        <!-- Main Content -->
+        <main class="flex-grow px-6 py-12">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Frequently Asked Questions</h1>
+                <p class="mt-4 text-lg text-slate-700 dark:text-slate-400 font-semibold">
+                    Find answers to common questions about our products, ordering, shipping, and more.
+                </p>
             </div>
 
-            <!-- Copyright -->
-            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">© 2025 Native Bites. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
+            <!-- Search Bar -->
+            <div class="mt-10 max-w-lg mx-auto">
+                <div class="relative">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                        <svg class="h-5 w-5 text-slate-400 dark:text-slate-500" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+                        </svg>
+                    </div>
+                    <input type="search"
+                        class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark py-4 pl-12 pr-4 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-primary focus:ring-primary text-lg font-semibold"
+                        placeholder="Search for a question" />
+                </div>
+            </div>
 
-    </div>
+            <!-- FAQ Items -->
+            <div class="mt-12 space-y-6 max-w-3xl mx-auto">
+                <details class="group rounded-lg bg-white/5 dark:bg-black/5 p-6">
+                    <summary class="flex list-none cursor-pointer items-center justify-between font-bold text-lg text-slate-900 dark:text-white">
+                        What types of products do you offer?
+                        <div class="text-slate-500 transition-transform duration-300 group-open:rotate-180">
+                            <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24">
+                                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                        </div>
+                    </summary>
+                    <p class="mt-4 text-base text-slate-700 dark:text-slate-300 leading-relaxed font-semibold">
+                        We offer farm-fresh products like free-range chicken eggs, pasture-raised goats, and seasonal goods.
+                    </p>
+                </details>
 
+                <details class="group rounded-lg bg-white/5 dark:bg-black/5 p-6">
+                    <summary class="flex list-none cursor-pointer items-center justify-between font-bold text-lg text-slate-900 dark:text-white">
+                        How do I place an order?
+                        <div class="text-slate-500 transition-transform duration-300 group-open:rotate-180">
+                            <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24">
+                                <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+                            </svg>
+                        </div>
+                    </summary>
+                    <p class="mt-4 text-base text-slate-700 dark:text-slate-300 leading-relaxed font-semibold">
+                        Browse our shop, add products to your cart, and checkout. Enter shipping and payment info, then confirm.
+                    </p>
+                </details>
+
+                <!-- Add other FAQs here similarly -->
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="border-t border-primary/20 bg-background-light dark:bg-background-dark px-6 py-6">
+            <div class="flex flex-col items-center gap-2 text-center">
+                <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                    <a href="Contact.html" class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">Contact Us</a>
+                    <a href="FAQ.html" class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">FAQ</a>
+                    <a href="Privacypolicy.html" class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">Privacy Policy</a>
+                    <a href="Terms.html" class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">Terms of Service</a>
+                </div>
+                <p class="text-xs text-stone-600 dark:text-stone-400 mt-2">© 2025 Native Bites. All rights reserved.</p>
+                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Developed by Muhammath Jibreel</p>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>

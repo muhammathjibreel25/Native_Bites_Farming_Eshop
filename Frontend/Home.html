@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- CRITICAL for mobile responsiveness -->
     <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
     <link as="style"
         href="https://fonts.googleapis.com/css2?display=swap&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
@@ -21,7 +22,7 @@
                         "background-dark": "#112111",
                     },
                     fontFamily: {
-                        display: ["Public Sans"],
+                        display: ["Public Sans", "sans-serif"],
                     },
                     borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
                 },
@@ -33,30 +34,55 @@
 
 <body class="bg-background-light dark:bg-background-dark font-display text-stone-900 dark:text-stone-100">
     <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
-        <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+
+        <!-- Header and Sticky Navigation -->
+        <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm shadow-md">
             <div class="container mx-auto flex items-center justify-between whitespace-nowrap px-4 py-3 lg:px-10">
+                
+                <!-- Logo -->
                 <div class="flex items-center gap-4">
                     <span class="material-symbols-outlined text-primary text-3xl"> grass </span>
                     <h2 class="text-xl font-bold">Native Bites</h2>
                 </div>
+                
+                <!-- Desktop Navigation (visible on md screens and up) -->
                 <nav class="hidden items-center gap-9 md:flex">
-                    <a class="text-sm font-medium hover:text-primary" href="Login&Register.html">Shop</a>
-                    <a class="text-sm font-medium hover:text-primary" href="About.html">About</a>
-                    <a class="text-sm font-medium hover:text-primary" href="Contact.html">Contact</a>
+                    <a class="text-sm font-medium hover:text-primary transition duration-150" href="Login&Register.html">Shop</a>
+                    <a class="text-sm font-medium hover:text-primary transition duration-150" href="About.html">About</a>
+                    <a class="text-sm font-medium hover:text-primary transition duration-150" href="Contact.html">Contact</a>
                 </nav>
+                
+                <!-- Actions & Mobile Menu Toggle -->
                 <div class="flex items-center gap-2">
                     <button
-                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 dark:bg-primary/30 text-sm font-bold tracking-wide hover:bg-primary/30 dark:hover:bg-primary/40">
+                        class="hidden md:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 dark:bg-primary/30 text-sm font-bold tracking-wide hover:bg-primary/30 dark:hover:bg-primary/40 transition duration-150">
                         <span class="truncate">Cart (0)</span>
                     </button>
                     <button
-                        class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-primary/20 dark:bg-primary/30 text-sm font-bold tracking-wide hover:bg-primary/30 dark:hover:bg-primary/40">
+                        class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-primary/20 dark:bg-primary/30 text-sm font-bold tracking-wide hover:bg-primary/30 dark:hover:bg-primary/40 transition duration-150">
                         <span class="material-symbols-outlined"> search </span>
+                    </button>
+                    <!-- Mobile Menu Button (visible only on small screens) -->
+                    <button id="menu-toggle"
+                        class="md:hidden flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-primary/20 dark:bg-primary/30 text-sm font-bold tracking-wide hover:bg-primary/30 dark:hover:bg-primary/40 transition duration-150">
+                        <span id="menu-icon" class="material-symbols-outlined">menu</span>
                     </button>
                 </div>
             </div>
         </header>
+
+        <!-- Mobile Navigation Drawer -->
+        <nav id="mobile-menu"
+            class="absolute top-[64px] left-0 right-0 z-40 hidden flex-col items-center bg-background-light dark:bg-background-dark shadow-xl border-t border-primary/20 pb-4 md:hidden">
+            <a class="w-full text-center p-3 text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/20 transition duration-150" href="Login&Register.html">Shop</a>
+            <a class="w-full text-center p-3 text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/20 transition duration-150" href="About.html">About</a>
+            <a class="w-full text-center p-3 text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/20 transition duration-150" href="Contact.html">Contact</a>
+            <a class="w-full text-center p-3 text-sm font-medium bg-primary/20 dark:bg-primary/30 mt-2" href="Login&Register.html">Cart (0)</a>
+        </nav>
+
         <main class="flex flex-col">
+            
+            <!-- Hero Section -->
             <section class="relative min-h-[60vh] md:min-h-[75vh]">
                 <div class="absolute inset-0 bg-cover bg-center"
                     style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAenofB-y_tSlMfsOdtDdjsPhIJ2GJU8WUvHgtUW-1D5iCEkRlKH_zqdpbDOnmyqrK58gPQFdCpMHWhjJ8qL1Pg1EGRKktqPY9iU3bYWFKW5bNltNmupTlK-taBXzS2Wn0wUzrRfLVBChY0Y4jU4bnirrRprGN5QRMxTcoxeTEo5hLmq3rTYzHbA1hAwwKQQzVADjW5BunFVgLApY7KWBUYB5duOpfKTmozAnhQCOCasUdsvUaQl-GX9Gdm4DbFU4pfES2ustoo8CQ");'>
@@ -64,93 +90,115 @@
                 <div class="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
                 <div
                     class="relative z-10 flex h-full min-h-[60vh] md:min-h-[75vh] flex-col items-center justify-center gap-6 p-4 text-center text-white">
-                    <h1 class="text-4xl font-black md:text-6xl">Native Bites Products</h1>
-                    <p class="max-w-2xl text-base md:text-lg">From our farm to your table, enjoy the freshest hens,
+                    <h1 class="text-4xl font-black sm:text-5xl md:text-6xl max-w-4xl">Native Bites Products</h1>
+                    <p class="max-w-2xl text-base sm:text-lg">From our farm to your table, enjoy the freshest hens,
                         goats, eggs, and more.</p>
                     <button
-                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-background-dark text-base font-bold tracking-wide hover:opacity-90">
-                        <a href="Information.html"><span class="truncate">Shop Now</span></a>
+                        class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary text-background-dark text-base font-bold tracking-wide hover:opacity-90 transition duration-200">
+                        <a href="Login&Register.html"><span class="truncate">Shop Now</span></a>
                     </button>
                 </div>
             </section>
-            <section class="container mx-auto px-4 py-16 lg:px-10">
+            
+            <!-- Categories Section -->
+            <section class="container mx-auto px-4 py-12 md:py-20 lg:px-10">
                 <h2 class="mb-8 text-3xl font-bold">Categories</h2>
-                <div class="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-                    <div class="group flex flex-col gap-3">
-                        <div class="overflow-hidden rounded-lg">
+                <!-- Grid adjusted for better responsiveness: 2 columns on mobile, 3 on tablets, 4 on desktop -->
+                <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 md:gap-6">
+                    <!-- Category Item 1 (Hens) -->
+                    <div class="group flex flex-col gap-3 cursor-pointer hover:opacity-80 transition duration-300">
+                        <div class="overflow-hidden rounded-xl shadow-lg">
                             <div class="w-full aspect-square bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
                                 style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBviR7n1tvdO-lCH_xQiMjWgnhXEW_14wSi1iB7VbDQ1t2gLq0x5MBgWHZrVujyXoNroBs_6-KG8aZJiAXbZDiCN2tRP5W_Ke_boasKXnVYU4EikMn995lkwcs0jy-hD5NA1MnONIcF4DyhiyhX68tp6KuNzF9hZgpjpqIGJVuJmcRKRxjnX0dirBBSzXwR8bVK6-kXciCKLIvzsg_8Dm87aM9g3Ferr7NoRG_JvzjoD0RWngg4Fr56kVlhWTeWYLOwl6wOzORQsOo");'>
                             </div>
                         </div>
-                        <p class="text-base font-medium">Hens</p>
+                        <p class="text-base font-medium text-center">Hens</p>
                     </div>
-                    <div class="group flex flex-col gap-3">
-                        <div class="overflow-hidden rounded-lg">
+                    <!-- Category Item 2 (Goats) -->
+                    <div class="group flex flex-col gap-3 cursor-pointer hover:opacity-80 transition duration-300">
+                        <div class="overflow-hidden rounded-xl shadow-lg">
                             <div class="w-full aspect-square bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
                                 style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB0bbjxSY64AqP6yfCJTjt3lLwAE0V8RZBmrSARyXHCBvPcd37pB1HNWScQUbj095g_mqrnpF8WSXuJz4jKNT-XaTORYBgLWco1bzqcgx98BtkNE_tQDQetFtyfDvNbdMM6bia23VXJKit_FjMpdkBA2KfQFVTHnWZqlGZXF8dQWnWCQ7mCtORLOZ3FT2i8R6OG_VY4xRAgX-jOBNBGW2bStqzj5eR6STdfHoPG69LchRaezwjNcoFy5fScdvkNb8K56a9KAQV4iBI");'>
                             </div>
                         </div>
-                        <p class="text-base font-medium">Goats</p>
+                        <p class="text-base font-medium text-center">Goats</p>
                     </div>
-                    <div class="group flex flex-col gap-3">
-                        <div class="overflow-hidden rounded-lg">
+                    <!-- Category Item 3 (Eggs) -->
+                    <div class="group flex flex-col gap-3 cursor-pointer hover:opacity-80 transition duration-300">
+                        <div class="overflow-hidden rounded-xl shadow-lg">
                             <div class="w-full aspect-square bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
                                 style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRb4sGcCYw2Dp_EAdL_irhE9OyvcnBh_RJ1m671CzcOll1A1suqtYhEru24ldulaxIkCdNN-fipjgC8I7d1A-ju6qr5LDiwlX108Vgbnun3GcOQR6DNLVpsj3AYdEmq3FfeZikmBnidI8VfYxHXWwDYD58AUqVkY4jvDJRdA29ayuUOtQYVdIif5ige2mUEYNq31OYXMuFgvdNplZwtUPjwIsxHL6uVzJZQZHLq8wDjRLrFkxgkQHhERpoX8Hdilx3ofdiLtEwJV4");'>
                             </div>
                         </div>
-                        <p class="text-base font-medium">Eggs</p>
+                        <p class="text-base font-medium text-center">Eggs</p>
                     </div>
-                    <div class="group flex flex-col gap-3">
-                        <div class="overflow-hidden rounded-lg">
+                    <!-- Category Item 4 (Others) -->
+                    <div class="group flex flex-col gap-3 cursor-pointer hover:opacity-80 transition duration-300">
+                        <div class="overflow-hidden rounded-xl shadow-lg">
                             <div class="w-full aspect-square bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
                                 style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCn6PFpLX0EEO0u4gv2wy62eGBEZ1D8B1Unk2l2cRhQfnmY748prMF7pSFPEKMyH9b_2Z14Sz0QvUKt2qS-zb3ycO_w5Wy5N6_ZKTYT1GYBrhmI8V7Pc7Ei2f2CIl_P6Iz23indfMC6Z8O34O9m5oX7dre24b9HwLlSE489PlTYrzEXbJyDbKy83S6epJK2N_0NdoG6fa5XqEuNRR4g8SCfQqXEtwUIredHAGCL-JnydmpBRlkuTQh9R8atp1DUlu2zt0CSM8V0kv4");'>
                             </div>
                         </div>
-                        <p class="text-base font-medium">Others</p>
+                        <p class="text-base font-medium text-center">Others</p>
                     </div>
                 </div>
             </section>
-            <section class="bg-background-light dark:bg-background-dark py-16">
+            
+            <!-- Featured Products Section -->
+            <section class="bg-background-light dark:bg-background-dark py-12 md:py-20 border-t border-b border-primary/10">
                 <div class="container mx-auto px-4 lg:px-10">
                     <h2 class="mb-8 text-3xl font-bold">Featured Products</h2>
-                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                        <div class="flex flex-col gap-4 rounded-lg">
+                    <!-- Grid: 1 column mobile, 2 columns tablet, 3 columns desktop -->
+                    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        
+                        <!-- Product 1 -->
+                        <div class="flex flex-col gap-4 rounded-xl p-4 bg-white dark:bg-stone-800 shadow-xl hover:shadow-2xl transition duration-300">
                             <div class="w-full aspect-square bg-cover bg-center rounded-lg"
                                 style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDH1HUH_iS_ssJywGPqoh3AY0H_SoQ1xyB0cKLlv4QCjIsAEy1F8QYEwyZqHrKuHIPiUWiBdu9wCzGL87lhlqr6-B9onC9H7Mntfa6_oVr7Cv1eF5fxgZcCVU8lOVWESZN0iv4J2GjmPWKv_5Yy3qTBZFvCXdVycZJkmdgxtbY4Ab-Ld1LLTkmLexpyZ6JKTHre8Ff9BYtN7PQSJhiLJL5rqHzAlDnegVqGZCyBdYmsGre7j5VR8W-of6ahdai6TPh7peMiCYzl5tU");'>
                             </div>
                             <div>
-                                <p class="text-base font-medium">Brown Hen</p>
-                                <p class="text-sm text-stone-600 dark:text-stone-400">Healthy brown hen</p>
+                                <p class="text-lg font-bold">Brown Hen</p>
+                                <p class="text-sm text-stone-600 dark:text-stone-400">Healthy brown hen, excellent layers.</p>
                             </div>
                         </div>
-                        <div class="flex flex-col gap-4 rounded-lg">
+                        
+                        <!-- Product 2 -->
+                        <div class="flex flex-col gap-4 rounded-xl p-4 bg-white dark:bg-stone-800 shadow-xl hover:shadow-2xl transition duration-300">
                             <div class="w-full aspect-square bg-cover bg-center rounded-lg"
                                 style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBivHpiem9Zrpp2-vPgo9tzHD1Iem-m0bBKiJyGw7gmXfHpKwy7CJsmmJepAG7bNLmhXXazjrDvo38Uc5NxmFzSG67BUDAiNy198EAY8BFCn58wiqTfGSM2nyzz3N0OwVV3GQUiNSs4hLjVsVmP8cidMw2dd5KQaA4RUYCbgwAXp9xqmD3vV5Y7sJTiz8ihoXgnuXcw0ebe_yBZDyRoJ9LvEuTpsmvN9U-twtlhUtDo4MOyv1GXS8AUs8YsXFGjnwsTSZIuT2F4_lo");'>
                             </div>
                             <div>
-                                <p class="text-base font-medium">White Goat</p>
-                                <p class="text-sm text-stone-600 dark:text-stone-400">Friendly white goat</p>
+                                <p class="text-lg font-bold">White Goat</p>
+                                <p class="text-sm text-stone-600 dark:text-stone-400">Friendly white goat, pure bred.</p>
                             </div>
                         </div>
-                        <div class="flex flex-col gap-4 rounded-lg">
+                        
+                        <!-- Product 3 -->
+                        <div class="flex flex-col gap-4 rounded-xl p-4 bg-white dark:bg-stone-800 shadow-xl hover:shadow-2xl transition duration-300">
                             <div class="w-full aspect-square bg-cover bg-center rounded-lg"
                                 style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZIxcO7W6qiS0MeXe3He7ldDnT5ixCWVg7W2OsTPVrceIQxVlVtcQSDTICL3XxR7dfaU1dnegyQG073TuSFRYyyfxJ1r9gTgYDZRe62BUuj3iKIM7qdi5ozf97QnEXzqNFR3C36wtUjPFocWu7tqt9vjVdWxjDIIKo3hz6_VEihbUwKcoMOYBHePjZODn8yGe90Cyv63Kk3iLS2yIrkxArXHYTlf3T-1xD400NDw2KKjwGOGS5XtC0DxH33adNVcwV7fqww-w9T5s");'>
                             </div>
                             <div>
-                                <p class="text-base font-medium">Native Bites Eggs</p>
-                                <p class="text-sm text-stone-600 dark:text-stone-400">One dozen fresh eggs</p>
+                                <p class="text-lg font-bold">Native Bites Eggs</p>
+                                <p class="text-sm text-stone-600 dark:text-stone-400">One dozen fresh, organic free-range eggs.</p>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
-            <section class="container mx-auto px-4 py-16 lg:px-10">
+            
+            <!-- Testimonials Section -->
+            <section class="container mx-auto px-4 py-12 md:py-20 lg:px-10">
                 <h2 class="mb-8 text-3xl font-bold">What Our Customers Say</h2>
+                <!-- Grid: 1 column mobile, 2 columns tablet, 3 columns desktop -->
                 <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <div class="flex flex-col gap-4 rounded-lg border border-primary/20 p-6">
+                    
+                    <!-- Review 1 -->
+                    <div class="flex flex-col gap-4 rounded-xl border border-primary/20 p-6 bg-white dark:bg-stone-800 shadow-lg">
                         <div class="flex items-center gap-3">
                             <img alt="Emily Carter" class="size-12 rounded-full object-cover"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmWKk1Z-wC31hEbpeUpj-xzw_GyZji3uWnKVZV-xt13r7aOdBAbXkGvuLyPW-jk3bTlXj8rkd8Tpn0PC5NIpCQ8L6jHd0FDzcqAhnWID4OXW5lwA02SU0mLOQDmR0hhfyE2dH41JbUic4Y-1zlvTb36InlY2hEM5Ol2x3KiYRucCiUqLOPX9tvci6dX3DieYqeQykwWP07rH0j6SYNIOlho5chX3eNrVtajudEfdTh2dki5LDD7_qrgXSmt9TBAT5g_-rYa4KBd9Q" />
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfXbSGlhM_-VuK3WVGh0nUBRU_-AcE5rGekFDzgkSxu3eaiHR_P2rjI0Sk03Gm6RTiw0-ApyT7vg5FlfP0txX7tID0N_LVOT9QTTzcu_Z9NvLNWNSJuiwtbyCZsXfhMoO4t8ghcJCQfgUm-tYX4igBKr6TjSnshU0cMfsbHpGm62bC-JZGvufO6EcCehnETayd5b9REf4nE_1UKFG9G-BMTM_woU5klsikmVbMmwf7Ucx9d4HY9847BBMP-fRnc-_ZXwKqAsV9fEc" />
                             <div class="flex-1">
                                 <p class="font-medium">Emily Carter</p>
                                 <p class="text-sm text-stone-600 dark:text-stone-400">2023-08-15</p>
@@ -166,7 +214,9 @@
                         <p class="text-sm">"The hens I purchased are healthy and laying eggs regularly. Great quality!"
                         </p>
                     </div>
-                    <div class="flex flex-col gap-4 rounded-lg border border-primary/20 p-6">
+                    
+                    <!-- Review 2 -->
+                    <div class="flex flex-col gap-4 rounded-xl border border-primary/20 p-6 bg-white dark:bg-stone-800 shadow-lg">
                         <div class="flex items-center gap-3">
                             <img alt="David Lee" class="size-12 rounded-full object-cover"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfXbSGlhM_-VuK3WVGh0nUBRU_-AcE5rGekFDzgkSxu3eaiHR_P2rjI0Sk03Gm6RTiw0-ApyT7vg5FlfP0txX7tID0N_LVOT9QTTzcu_Z9NvLNWNSJuiwtbyCZsXfhMoO4t8ghcJCQfgUm-tYX4igBKr6TjSnshU0cMfsbHpGm62bC-JZGvufO6EcCehnETayd5b9REf4nE_1UKFG9G-BMTM_woU5klsikmVbMmwf7Ucx9d4HY9847BBMP-fRnc-_ZXwKqAsV9fEc" />
@@ -185,7 +235,9 @@
                         </div>
                         <p class="text-sm">"The goats are friendly and well-behaved. Happy with my purchase."</p>
                     </div>
-                    <div class="flex flex-col gap-4 rounded-lg border border-primary/20 p-6">
+                    
+                    <!-- Review 3 -->
+                    <div class="flex flex-col gap-4 rounded-xl border border-primary/20 p-6 bg-white dark:bg-stone-800 shadow-lg">
                         <div class="flex items-center gap-3">
                             <img alt="Sarah Johnson" class="size-12 rounded-full object-cover"
                                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN6bklAVR5g_ZU70Vcf69U8oSrb4fwsHsqmucGeGLjZDzRO3Tc6P9fbXY-P9OFPNDfRWnkSGPFaRKgv-pusNrJyMy_gA2Lylz0avxgEO94FTGfDc5XshXi37qxX5jbIirdI7OGczoBQ1EqvcPKhL4KRPyfRkTLEHxVCXCSbp3NF8egmk2UoOS3hkecOpfQeWKFHM2KXyQnsvuSiTJQC76YEHDIAI_UVcxn5mbfhuutSbkvP08x6MDGHDlg4hZOvCD5PZzaoDQh8ww" />
@@ -205,71 +257,96 @@
                     </div>
                 </div>
             </section>
-            <section class="bg-background-light dark:bg-background-dark py-20 text-center">
+            
+            <!-- CTA Section -->
+            <section class="bg-background-light dark:bg-background-dark py-12 md:py-20 text-center">
                 <div class="container mx-auto px-4 lg:px-10">
                     <h2 class="text-3xl font-bold">About Our Farm</h2>
                     <p class="mx-auto mt-4 max-w-2xl text-stone-600 dark:text-stone-400">Discover our sustainable
                         farming practices and commitment to quality.</p>
                     <a href="Login&Register.html"><button
-                        class="mt-8 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-background-dark text-base font-bold tracking-wide hover:opacity-90 mx-auto">
+                        class="mt-8 flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary text-background-dark text-base font-bold tracking-wide hover:opacity-90 transition duration-200 mx-auto">
                         <span class="truncate">Learn More</span>
                     </button></a>
                 </div>
             </section>
         </main>
-        <footer class="border-t border-primary/20 bg-background-light dark:bg-background-dark">
-            <div
-                class="container mx-auto flex flex-col items-center justify-between gap-6 px-5 py-10 text-center sm:flex-row sm:text-left">
-                <div class="flex flex-col items-center gap-4 sm:items-start">
-                    <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-primary text-2xl"> grass </span>
-                        <h3 class="text-lg font-bold">Native Bites</h3>
-                    </div>
-                    <h3 class="text-lg font-bold">Developed by Muhammath Jibreel</h3>
-                    <p class="text-sm text-stone-600 dark:text-stone-400">© 2025 Native Bites. All rights reserved.</p>
-                </div>
-                <div class="flex flex-col items-center gap-4 sm:items-end">
-                    <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-                        <a class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary" href="About.html">About
-                            Us</a>
-                        <a class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary"
-                            href="Contact.html">Contact Us</a>
-                        <a class="text-sm font-medium text-stone-900 dark:text-stone-100 hover:text-primary"
-                            href="Privacypolicy.html">Privacy Policy</a>
-                        <a class="text-sm font-medium text-stone-900 dark:text-stone-100 hover:text-primary"
-                            href="Terms.html">Terms of Service</a>
-                    </div>
-                    <div class="flex justify-center gap-4">
-                        <a class="text-stone-500 hover:text-primary" href="#">
-                            <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a class="text-stone-500 hover:text-primary" href="#">
-                            <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a class="text-stone-500 hover:text-primary" href="#">
-                            <svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        
+        <!-- Footer -->
+        <!-- Footer -->
+<footer class="border-t border-primary/20 bg-background-light dark:bg-background-dark">
+  <div class="container mx-auto px-5 py-6">
+    <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-6 text-center md:text-left">
+
+      <!-- Left Section -->
+      <div class="flex flex-col items-center md:items-start gap-2">
+        <div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2">
+          <a href="Contact.html" class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">Contact Us</a>
+          <a href="Privacypolicy.html" class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">Privacy Policy</a>
+          <a href="Terms.html" class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">Terms of Service</a>
+        </div>
+        <p class="text-xs text-stone-600 dark:text-stone-400 mt-2">© 2024 Native Bites. All rights reserved.</p>
+        <p class="text-xs text-stone-500 dark:text-stone-400">Developed by <span class="font-medium">Muhammath Jibreel</span></p>
+      </div>
+
+      <!-- Right Section -->
+      <div class="flex justify-center md:justify-end gap-4">
+        <a href="#" class="text-stone-500 hover:text-primary transition" aria-label="Facebook">
+          <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+          </svg>
+        </a>
+        <a href="#" class="text-stone-500 hover:text-primary transition" aria-label="Instagram">
+          <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+          </svg>
+        </a>
+        <a href="#" class="text-stone-500 hover:text-primary transition" aria-label="Twitter">
+          <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Z"></path>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+
+            if (menuToggle && mobileMenu) {
+                menuToggle.addEventListener('click', () => {
+                    // Toggle the hidden class on the mobile menu
+                    const isHidden = mobileMenu.classList.contains('hidden');
+                    
+                    if (isHidden) {
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenu.classList.add('flex');
+                        menuIcon.textContent = 'close'; // Change icon to 'close'
+                    } else {
+                        mobileMenu.classList.remove('flex');
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.textContent = 'menu'; // Change icon back to 'menu'
+                    }
+                });
+
+                // Close menu if a link is clicked
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('flex');
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.textContent = 'menu';
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

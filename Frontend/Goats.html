@@ -9,7 +9,7 @@
   <link as="style"
     href="https://fonts.googleapis.com/css2?display=swap&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
     onload="this.rel='stylesheet'" rel="stylesheet" />
-    <link rel="icon" href="https://nativebites.neocities.org/Assets/Rooster%20Logo.png">
+  <link rel="icon" href="https://nativebites.neocities.org/Assets/Rooster%20Logo.png">
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script>
     tailwind.config = {
@@ -32,36 +32,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
-  <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<body class="bg-background-light dark:bg-background-dark font-display">
+  <div class="flex min-h-screen w-full flex-col">
     <header
-      class="sticky top-0 z-10 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
-      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center gap-8">
-          <a class="flex items-center gap-3 text-slate-900 dark:text-white" href="#">
-            <svg class="h-6 w-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-              <path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+      class="sticky top-0 z-10 border-b border-black/10 bg-background-light/80 px-4 py-3 backdrop-blur-sm dark:border-white/10 dark:bg-background-dark/80 sm:px-6 lg:px-8">
+      <div class="mx-auto flex max-w-7xl items-center justify-between">
+        <div class="flex items-center gap-6">
+          <a class="flex items-center gap-2 text-xl font-bold text-black dark:text-white" href="#">
+            <svg class="h-6 w-6 text-primary" fill="currentColor" viewBox="0 0 24 24"
+              xmlns="https://www.w3.org/2000/svg">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm8 10c0 .9-.17 1.76-.48 2.56l-3.32-3.32c.1-.53.15-1.07.15-1.63 0-2.07-.81-3.95-2.12-5.32L16.8 3.64C19.14 5.34 20 8.51 20 12zM3.64 7.2l2.12 2.12C4.95 10.05 4 11.93 4 14c0 .56.05 1.1.15 1.63l-3.32 3.32C.17 17.76 0 16.9 0 16c0-3.49.86-6.66 3.2-8.36L3.64 7.2zM12 20c-1.39 0-2.68-.41-3.77-1.12l1.69-1.69c.65.29 1.36.46 2.08.46s1.43-.17 2.08-.46l1.69 1.69C14.68 19.59 13.39 20 12 20z">
+              </path>
             </svg>
-            <h2 class="text-lg font-bold">Native Bites</h2>
+            <span>Native Bites</span>
           </a>
-          <nav class="hidden items-center gap-8 md:flex">
-            <a class="text-sm font-medium hover:text-primary" href="Hens.html">Hens</a>
-            <a class="text-sm font-medium hover:text-primary" href="Eggs.html">Eggs</a>
-            <a class="text-sm font-medium hover:text-primary" href="Shop.html">Other Products</a>
+          <nav class="hidden items-center gap-6 md:flex">
+            <a class="text-sm font-medium text-black/60 transition-colors hover:text-black dark:text-white/60 dark:hover:text-white"
+              href="Shop.html">Shop</a>
+            <a class="text-sm font-medium text-black/60 transition-colors hover:text-black dark:text-white/60 dark:hover:text-white"
+              href="About.html">Our Kutty Story</a>
+            <a class="text-sm font-medium text-black/60 transition-colors hover:text-black dark:text-white/60 dark:hover:text-white"
+              href="Contact.html">Contact</a>
           </nav>
         </div>
         <div class="flex items-center gap-4">
           <div class="relative hidden sm:block">
-            <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"> search
-            </span>
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-black/50 dark:text-white/50">search</span>
             <input
-              class="form-input w-full rounded-full border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark py-2 pl-10 pr-4 text-sm focus:border-primary focus:ring-primary"
-              placeholder="Search" value="" />
+              class="h-10 w-full rounded-lg bg-black/5 pl-10 pr-4 text-sm text-black placeholder:text-black/50 dark:bg-white/5 dark:text-white dark:placeholder:text-white/50"
+              placeholder="Search products..." type="search" />
           </div>
           <a href="Cart.html"><button
-              class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-200/50 dark:bg-slate-800/50 text-slate-800 dark:text-slate-200 hover:bg-primary/20">
-              <span class="material-symbols-outlined"> shopping_cart </span>
+              class="relative h-10 w-10 rounded-lg text-black/60 transition-colors hover:text-black dark:text-white/60 dark:hover:text-white">
+              <span class="material-symbols-outlined">shopping_cart</span>
+              <span
+                class="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">3</span>
             </button></a>
+          <button
+            class="md:hidden h-10 w-10 rounded-lg text-black/60 transition-colors hover:text-black dark:text-white/60 dark:hover:text-white">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
         </div>
       </div>
     </header>
@@ -70,6 +82,33 @@
         <div class="flex flex-col gap-8 md:flex-row">
           <aside class="w-full md:w-64">
             <div class="space-y-6">
+              <div class="flex flex-wrap gap-3 mt-6">
+                <a href="Shop.html">
+                  <button class="px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20
+      bg-black/5 dark:bg-white/5 text-black dark:text-white">
+                    All
+                  </button>
+                </a>
+                <a href="Hens.html">
+                  <button class="px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20
+      bg-black/5 dark:bg-white/5 text-black dark:text-white">
+                    Hens
+                  </button>
+                </a>
+                <a href="Goats.html">
+                  <button class="px-4 py-2 rounded-full text-sm font-medium transition-colors 
+      bg-green-500 text-white shadow-md hover:bg-green-600">
+                    Goats
+                  </button>
+                </a>
+                <a href="Eggs.html">
+                  <button class="px-4 py-2 rounded-full text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary dark:hover:bg-primary/20
+      bg-black/5 dark:bg-white/5 text-black dark:text-white">
+                    Eggs
+                  </button>
+                </a>
+              </div>
+
               <h3 class="text-lg font-bold text-slate-900 dark:text-white">Filters</h3>
               <div class="space-y-4">
                 <h4 class="font-semibold text-slate-800 dark:text-slate-200">Breed</h4>
@@ -347,25 +386,62 @@
         </div>
       </div>
     </main>
-    <footer class="border-t border-black/10 bg-background-light dark:border-white/10 dark:bg-background-dark">
-            <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-                <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
-                    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-center md:justify-start">
-                        <a class="text-sm text-black/60 transition-colors hover:text-primary dark:text-white/60 dark:hover:text-primary"
-                            href="About.html">About Us</a>
-                        <a class="text-sm text-black/60 transition-colors hover:text-primary dark:text-white/60 dark:hover:text-primary"
-                            href="Contact.html">Contact</a>
-                        <a class="text-sm text-black/60 transition-colors hover:text-primary dark:text-white/60 dark:hover:text-primary"
-                            href="FAQ.html">FAQ</a>
-                        <a class="text-sm text-black/60 transition-colors hover:text-primary dark:text-white/60 dark:hover:text-primary"
-                            href="Cart.html">Shipping & Returns</a>
-                    </div>
-                    <p class="text-sm text-black/60 dark:text-white/60">© 2025 Native Bites. All rights reserved.</p>
-                </div>
-                <p class="text-lg font-bold">Developed by Muhammath Jibreel</p>
+    <!-- Footer -->
+    <footer class="border-t border-primary/20 bg-background-light dark:bg-background-dark">
+      <div class="container mx-auto px-5 py-6">
+        <div
+          class="flex flex-col md:flex-row items-center md:items-start justify-between gap-6 text-center md:text-left">
+
+          <!-- Left Section -->
+          <div class="flex flex-col items-center md:items-start gap-2">
+            <div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2">
+              <a href="Contact.html"
+                class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">Contact
+                Us</a>
+              <a href="FAQ.html"
+                class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">FAQ</a>
+              <a href="Privacypolicy.html"
+                class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">Privacy
+                Policy</a>
+              <a href="Terms.html"
+                class="text-sm text-stone-600 dark:text-stone-400 hover:text-primary transition">Terms
+                of Service</a>
             </div>
-        </footer>
-    </div>
+            <p class="text-xs text-stone-600 dark:text-stone-400 mt-2">© 2024 Native Bites. All rights
+              reserved.</p>
+            <p class="text-xs text-stone-500 dark:text-stone-400">Developed by <span class="font-medium">Muhammath
+                Jibreel</span></p>
+          </div>
+
+          <!-- Right Section -->
+          <div class="flex justify-center md:justify-end gap-4">
+            <a href="#" class="text-stone-500 hover:text-primary transition" aria-label="Facebook">
+              <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z">
+                </path>
+              </svg>
+            </a>
+            <a href="#" class="text-stone-500 hover:text-primary transition" aria-label="Instagram">
+              <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z">
+                </path>
+              </svg>
+            </a>
+            <a href="#" class="text-stone-500 hover:text-primary transition" aria-label="Twitter">
+              <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Z">
+                </path>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </div>
   </div>
 </body>
 
